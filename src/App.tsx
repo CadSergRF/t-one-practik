@@ -10,7 +10,6 @@ import { ErrorPage } from "./components/ErrorPage/ErrorPage";
 function App() {
   return (
     <>
-      <p>Практическое задание Т1</p>
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<MainPage />} />
