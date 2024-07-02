@@ -1,0 +1,27 @@
+:root {
+    --text-primary: #fff;
+    --text-primary-dark: #FFFFFF1F;
+    --text-secondary: #444B58;
+    --text-placeholder: #B2B5BB;
+    --text-product-name: #444B58;
+    --text-product-price: #444B58;
+    --text-category: #646464;
+    --text-rek: #F14F4F;
+
+    --button-primary: #F14F4F;
+    --button-hover: #8C2828;
+    --button-disabled: #F8AFAF;
+
+    --link-bg: #fff;
+    --link-bg-hover: #C4C4C4;
+    --link-wo-bg: #C4C4C4;
+    --link-wo-bg-hover: #444B58;
+
+    --image-cover: #87878740;
+
+    --cart-item-hover: #F6F6F6;
+    
+    --background-color-primary: #fff;
+    --background-color-secondary: #484283;
+    --background-color-footer: #444B58;
+}
