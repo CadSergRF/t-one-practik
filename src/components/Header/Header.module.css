@@ -27,12 +27,17 @@
 }
 
 .menu__item:hover {
-    color: var(--link-bg-hover);
-    text-decoration: underline;
+  color: var(--link-bg-hover);
+  text-decoration: underline;
 }
 
 .cart__container {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart__container:hover .menu__item {
+  color: var(--link-bg-hover);
+  text-decoration: underline;
 }

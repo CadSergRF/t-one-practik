@@ -1,0 +1,70 @@
+.wrapper {
+  width: 1180px;
+  margin: 48px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+}
+
+.title {
+  margin: 0;
+  font: 700 36px/56px "Jost";
+  color: var(--text-secondary);
+}
+
+.search__label {
+  width: 100%;
+}
+
+.search__input {
+  width: 100%;
+  font: 400 16px/22px "Jost";
+  color: var(--text-secondary);
+  border: none;
+  border-radius: 4px;
+  padding: 20px;
+  background-color: var(--background-color-input);
+}
+
+.search__input::placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input:active,
+.search__input:hover,
+.search__input:focus {
+  outline: 0;
+  outline-offset: 0;
+}
+
+.cart__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px 35px;
+  list-style-type: none;
+}
+
+.button {
+  align-self: center;
+  width: 177px;
+  height: 62px;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+  font: 400 16px/22px "Jost";
+  color: var(--text-primary);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.button:disabled {
+  background-color: var(--button-disabled);
+}

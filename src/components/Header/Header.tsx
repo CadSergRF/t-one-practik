@@ -30,7 +30,7 @@ const Header = () => {
               <p className={styles.menu__item}>
                 Cart
               </p>
-              <CartIcon counter={String(cartItems)} />
+              <CartIcon counter={cartItems} location="Cart"/>
             </Link>
           </li>
           <li>

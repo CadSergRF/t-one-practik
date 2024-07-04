@@ -1,12 +1,13 @@
 :root {
     --text-primary: #fff;
-    --text-primary-dark: #FFFFFF1F;
+    --text-back: #FFFFFF1F;
     --text-secondary: #444B58;
     --text-placeholder: #B2B5BB;
     --text-product-name: #444B58;
     --text-product-price: #444B58;
     --text-category: #646464;
     --text-rek: #F14F4F;
+    --text-image-hover: #FFFFFF99;
 
     --button-primary: #F14F4F;
     --button-hover: #8C2828;
@@ -17,11 +18,12 @@
     --link-wo-bg: #C4C4C4;
     --link-wo-bg-hover: #444B58;
 
-    --image-cover: #87878740;
+    --image-hover: #87878740;
 
     --cart-item-hover: #F6F6F6;
     
     --background-color-primary: #fff;
     --background-color-secondary: #484283;
     --background-color-footer: #444B58;
+    --background-color-input: #F6F6F6;
 }
