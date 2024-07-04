@@ -16,9 +16,10 @@
 }
 
 .plus {
+  width: 25px;
+  height: 25px;
+  object-fit: cover;
   margin: 0;
-  font: 400 25px/30px "Jost";
-  color: var(--text-primary);
   will-change: transform;
   transition: transform 0.3s ease-in-out;
 }

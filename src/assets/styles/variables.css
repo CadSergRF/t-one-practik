@@ -9,6 +9,8 @@
     --text-rek: #F14F4F;
     --text-image-hover: #FFFFFF99;
 
+    --border: #C4C4C4;
+
     --button-primary: #F14F4F;
     --button-hover: #8C2828;
     --button-disabled: #F8AFAF;
@@ -26,4 +28,5 @@
     --background-color-secondary: #484283;
     --background-color-footer: #444B58;
     --background-color-input: #F6F6F6;
+    --background-color-buy: #0000000A;
 }

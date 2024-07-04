@@ -1,41 +1,43 @@
 .cart {
-    width: 20px;
-    height: 20px;
-    position: relative;
+  width: 20px;
+  height: 20px;
+  position: relative;
 }
 
 .cart::before {
-    content: attr(data-count);
-    position: absolute;
-    bottom: -4px;
-    right: -4px;
-    border-radius: 50%;
-    background-color: var(--button-primary);
-    font: 400 8px/8px "Jost";
-    color: var(--text-primary);
-    width: 12px;
-    height: 12px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  content: attr(data-count);
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  border-radius: 50%;
+  background-color: var(--button-primary);
+  font: 400 8px/8px "Jost";
+  color: var(--text-primary);
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .addButton {
-    width: 18px;
-    height: 18px;
-    object-fit: contain;
+  width: 18px;
+  height: 18px;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .quantityBtn {
-    width: 30px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    object-fit: contain;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  -o-object-fit: contain;
+  object-fit: contain;
 }
 
 .image {
-    max-width: 100%;
-    max-height: 100%;
+  max-width: 100%;
+  max-height: 100%;
 }

@@ -1,12 +1,15 @@
+import { MouseEvent } from "react";
+import { useNavigate } from "react-router-dom";
+
+import clsx from "clsx";
+
+import { CartIcon } from "../../assets/svgComponents/CartIcon/CartIcon";
+
 import { TGoods } from "../../Types/goods.type";
 
 import styles from "./Card.module.css";
 
 import cardImage from "../../mock/image.jpg";
-import { CartIcon } from "../../assets/svgComponents/CartIcon/CartIcon";
-import { useNavigate } from "react-router-dom";
-import { MouseEvent } from "react";
-import clsx from "clsx";
 
 type Props = {
   item: TGoods;
@@ -14,10 +17,11 @@ type Props = {
 
 const Card = ({ item }: Props) => {
   const { id, name, price, quantity } = item;
+
   const navigate = useNavigate();
 
   const handleShowProduct = () => {
-    navigate(`/product/${id}`);
+    navigate(`/product/${id}`, {state: item});
   };
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -27,7 +31,7 @@ const Card = ({ item }: Props) => {
 
   const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Количество товара уменьшино на 1");
+    console.log("Количество товара уменьшено на 1");
   };
 
   const handlePlusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
