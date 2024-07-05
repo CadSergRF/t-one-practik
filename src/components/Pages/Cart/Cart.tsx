@@ -6,6 +6,7 @@ import { mockCart } from "../../../mock/mock.cart";
 
 import styles from "./Cart.module.css";
 import clsx from "clsx";
+import { Helmet } from "react-helmet";
 
 const Cart = () => {
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
@@ -17,6 +18,14 @@ const Cart = () => {
   const priceWord = productForOrder.length > 0 ? "items" : "item";
 
   return (
+    <>
+    <Helmet>
+        <title>My cart | Goods4you</title>
+        <meta
+          name="description"
+          content="Any products from famous brands with worldwide delivery"
+        />
+      </Helmet>
     <section className={styles.wrapper}>
       <h2 className={styles.cart__title}>My cart</h2>
       <article className={styles.container}>
@@ -51,6 +60,7 @@ const Cart = () => {
         </div>
       </article>
     </section>
+    </>
   );
 };
 

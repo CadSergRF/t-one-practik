@@ -1,5 +1,6 @@
 import { MouseEvent } from "react";
 import { useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 import { TGoods } from "../../../Types/goods.type";
 
@@ -17,7 +18,15 @@ const ProductPage = () => {
   };
 
   return (
-    <section className={styles.wrapper}>
+    <>
+      <Helmet>
+        <title>{name} | Goods4you</title>
+        <meta
+          name="description"
+          content="Any products from famous brands with worldwide delivery"
+        />
+      </Helmet>
+      <section className={styles.wrapper}>
         {/* Галлерея */}
         <div className={styles.gallery}>
           <picture className={styles.wrapper__image}>
@@ -84,13 +93,17 @@ const ProductPage = () => {
                 <p className={styles.price__old}>9.99&#36;</p>
               </div>
               <p className={styles.prices__text}>
-                Your discount:<span className={styles.prices__text_discount}>14.5%</span>
-                </p>
+                Your discount:
+                <span className={styles.prices__text_discount}>14.5%</span>
+              </p>
             </div>
-            <button className={styles.add__button} onClick={handleAddToCart}>Add to cart</button>
+            <button className={styles.add__button} onClick={handleAddToCart}>
+              Add to cart
+            </button>
           </section>
         </div>
-    </section>
+      </section>
+    </>
   );
 };
 
