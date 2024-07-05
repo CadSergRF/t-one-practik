@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 
 import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
-import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
+import { AddedButton } from "../UI-kit/AddedButton/AddedButton";
 
 import { TCartItem } from "../../Types/cart.type";
 
@@ -20,10 +20,15 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
     navigate(`/product/${id}`, { state: item });
   };
 
+  const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
+    evt.stopPropagation();
+    console.log("Товар добавлен в корзину");
+  };
+
   const handleDelete = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log('Delete product')
-  }
+    console.log("Delete product");
+  };
 
   return (
     <li>
@@ -34,10 +39,12 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
           })}
         >
           <picture className={styles.wrapper__image}>
-            <img src={cardImage} className={styles.image} alt="Фото товара" />
+            <img src={cardImage} className={styles.image} alt="Фотография товара" />
           </picture>
           <div className={styles.content}>
-            <h3 className={styles.item__title} onClick={handleShowProduct}>{name}</h3>
+            <h3 className={styles.item__title} onClick={handleShowProduct}>
+              {name}
+            </h3>
             <p className={styles.item__price}>
               {price}
               <span className={styles.item__price_currency}>&#36;</span>
@@ -47,16 +54,19 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
         {quantity > 0 ? (
           <div className={styles.controls}>
             <AddedControl quantity={quantity} />
-            <button className={styles.delete__button}>Delete</button>
+            <button className={styles.delete__button} onClick={handleDelete}>
+              Delete
+            </button>
           </div>
         ) : (
-          <button
-            type="button"
-            className={styles.button}
-            onClick={handleDelete}
-          >
-            <CartIcon location="AddButton" />
-          </button>
+          // <button
+          //   type="button"
+          //   className={styles.button}
+          //   onClick={handleDelete}
+          // >
+          //   <CartIcon location="AddButton" />
+          // </button>
+          <AddedButton location="AddButton" handler={handleAddToCart} />
         )}
       </article>
     </li>

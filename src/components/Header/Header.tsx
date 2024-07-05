@@ -10,10 +10,10 @@ const Header = () => {
 
   return (
     <header className={styles.wrapper}>
-      <HashLink smooth to="/#top" className={styles.logo}>
+      <HashLink smooth to="/" className={styles.logo}>
         Goods4you
       </HashLink>
-      <nav>
+      <nav className={styles.menu__wrapper}>
         <ul className={styles.menu}>
           <li>
             <HashLink smooth to="/#catalog" className={styles.menu__item}>
@@ -26,15 +26,15 @@ const Header = () => {
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/cart#top" className={styles.cart__container}>
+            <HashLink smooth to="/cart" className={styles.cart__container}>
               <p className={styles.menu__item}>
                 Cart
               </p>
-              <CartIcon counter={cartItems} location="Cart"/>
+              <CartIcon counter={cartItems}/>
             </HashLink>
           </li>
           <li>
-            <HashLink smooth to="/#top" className={styles.menu__item}>
+            <HashLink smooth to="/" className={styles.menu__item}>
               Johnson Smith
             </HashLink>
           </li>

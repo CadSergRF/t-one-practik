@@ -45,3 +45,26 @@
   font: 600 16px/26px "Jost";
   color: var(--text-primary);
 }
+
+@media screen and (max-width: 460px) {
+  .wrapper__question {
+    padding: 10px 0;
+  }
+
+  .question {
+    font: 600 14px/16px "Jost";
+  }
+
+  .answer {
+    font: 400 14px/16px "Jost";
+  }
+
+  .answer_open {
+    padding-bottom: 10px;
+  }
+
+  .plus {
+    width: 16px;
+    height: 16px;
+  }
+}

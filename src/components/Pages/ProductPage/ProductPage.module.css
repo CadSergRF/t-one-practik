@@ -184,3 +184,89 @@
 .add__button:disabled {
     background-color: var(--button-disabled);
 }
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    width: 800px;
+    padding: 0 30px;
+    grid-template-columns: 370px auto;
+    gap: 20px;
+  }
+
+  .title {
+    line-height: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .buy {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    width: 650px;
+    padding: 0 30px;
+    grid-template-columns: 300px auto;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .info {
+    gap: 15px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .other {
+    gap: 5px;
+  }
+  
+  .buy {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper {
+    width: 450px;
+    padding: 0 30px;
+    grid-template-columns: 450px;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper {
+    width: 250px;
+    padding: 0 10px;
+    grid-template-columns: 250px;
+    gap: 20px;
+  }
+
+  .category {
+    font-size: 14px;
+  }
+
+  .price {
+      padding: 0 5px;
+  }
+  
+  .prices__text {
+      padding: 0 5px;
+  }
+}

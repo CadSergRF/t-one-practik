@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 
-import { CartIcon } from "../CartIcon/CartIcon";
+import { AddedButton } from "../AddedButton/AddedButton";
 
 import styles from "./AddedControl.module.css";
 
@@ -9,6 +9,9 @@ type Props = {
 };
 
 const AddedControl = ({ quantity }: Props) => {
+
+  const priceWord = quantity > 1 ? "items" : "item";
+
   const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
     console.log("Количество товара уменьшено на 1");
@@ -20,13 +23,9 @@ const AddedControl = ({ quantity }: Props) => {
   };
   return (
     <div className={styles.group__quantity}>
-      <button className={styles.button} onClick={handleMinusQuantity}>
-        <CartIcon location="MinusButton" />
-      </button>
-      <p className={styles.quantity}>{quantity} item</p>
-      <button className={styles.button} onClick={handlePlusQuantity}>
-        <CartIcon location="PlusButton" />
-      </button>
+      <AddedButton location="MinusButton" handler={handleMinusQuantity} />
+      <p className={styles.quantity}>{quantity}&#160;{priceWord}</p>
+      <AddedButton location="PlusButton" handler={handlePlusQuantity} />
     </div>
   );
 };

@@ -96,3 +96,56 @@
 .button:disabled {
   background-color: var(--button-disabled);
 }
+
+@media screen and (max-width: 880px) {
+  .wrapper {
+    width: 250px;
+  }
+
+  .content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrapper__image {
+    height: 200px;
+  }
+
+  .info {
+    max-width: 190px;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .wrapper {
+    width: 370px;
+  }
+
+  .content {
+    flex-wrap: nowrap;
+    justify-content: space-between;
+  }
+
+  .wrapper__image {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper {
+    width: 250px;
+  }
+
+  .content {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrapper__image {
+    height: 200px;
+  }
+
+  .info {
+    max-width: 190px;
+  }
+}

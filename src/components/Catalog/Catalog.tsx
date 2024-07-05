@@ -1,6 +1,8 @@
-import { mockGoods } from "../../mock/mock.goods";
 import Card from "../Card/Card";
+
 import styles from "./Catalog.module.css";
+
+import { mockGoods } from "../../mock/mock.goods";
 
 const Catalog = () => {
   return (

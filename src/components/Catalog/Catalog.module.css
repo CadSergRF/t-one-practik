@@ -68,3 +68,38 @@
 .button:disabled {
   background-color: var(--button-disabled);
 }
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    width: 800px;
+    padding: 0 30px;
+  }
+
+  .cart__list {
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 880px) {
+  .wrapper {
+    width: auto;
+    padding: 0 30px;
+  }
+
+  .cart__list {
+    margin: 0 auto;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .wrapper {
+    padding: 0 10px;
+  }
+
+  .cart__list {
+    margin: 0 auto;
+    grid-template-columns: 1fr;
+  }
+}

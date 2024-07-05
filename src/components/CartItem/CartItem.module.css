@@ -8,7 +8,7 @@
 }
 
 .wrapper:hover {
-    background-color: var(--background-color-input);
+  background-color: var(--background-color-input);
 }
 
 .info__block {
@@ -37,7 +37,7 @@
 }
 
 .content {
-  max-width: 252px;
+  max-width: 250px;
 }
 
 .item__title {
@@ -63,23 +63,23 @@
 }
 
 .controls {
-    display: flex;
-    align-items: center;
-    gap: 36px;
+  display: flex;
+  align-items: center;
+  gap: 36px;
 }
 
 .delete__button {
-    padding: 0;
-    border: none;
-    background-color: transparent;
-    font: 400 14px/20px 'Jost';
-    color: var(--text-placeholder);
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: 400 14px/20px "Jost";
+  color: var(--text-placeholder);
 }
 
 .delete__button:hover {
-    color: var(--text-secondary);
-    text-decoration: underline;
-    cursor: pointer;
+  color: var(--text-secondary);
+  text-decoration: underline;
+  cursor: pointer;
 }
 
 .button {
@@ -100,4 +100,65 @@
 
 .button:disabled {
   background-color: var(--button-disabled);
+}
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    gap: 15px;
+  }
+
+  .form__list {
+    padding: 0;
+  }
+
+  .item__title {
+    max-width: 200px;
+  }
+
+  .controls {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .item__title {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .wrapper {
+    padding: 0;
+    gap: 5px;
+  }
+
+  .info__block {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrapper__image {
+    width: 250px;
+    height: 200px;
+  }
+
+  .wrapper__image {
+    width: 100%;
+  }
+
+  .item__title {
+    max-width: 100%;
+  }
+
+  .item__price {
+    text-align: center;
+  }
 }

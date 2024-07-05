@@ -1,6 +1,11 @@
-.container {
-  padding: 60px 280px;
+.wrapper {
+  padding: 60px 30px;
   background-color: var(--background-color-secondary);
+}
+
+.container {
+  width: 880px;
+  margin: 0 auto;
 }
 
 .title {
@@ -20,4 +25,21 @@
 
 .list:first-of-type {
   border-top: 1px solid var(--text-primary);
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .wrapper {
+    padding: 30px 20px;
+    }
+
+  .title {
+    font-size: 24px;
+    line-height: 26px;
+  }
 }

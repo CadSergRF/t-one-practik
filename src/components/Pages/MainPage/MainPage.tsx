@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
 import { Hero } from "../../Hero/Hero";
 import { Catalog } from "../../Catalog/Catalog";
@@ -9,10 +9,6 @@ const MainPage = () => {
     <>
       <Helmet>
         <title>Catalog | Goods4you</title>
-        <meta
-          name="description"
-          content="Any products from famous brands with worldwide delivery"
-        />
       </Helmet>
       <Hero />
       <Catalog />

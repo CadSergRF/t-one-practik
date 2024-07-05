@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 
-import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
+import { AddedButton } from "../UI-kit/AddedButton/AddedButton";
 import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
 
 import { TGoodsItems } from "../../Types/goods.type";
@@ -29,7 +29,7 @@ const Card = ({ item, quantity }: TGoodsItems) => {
     <li>
       <article className={styles.wrapper} onClick={handleShowProduct}>
         <picture className={styles.wrapper__image}>
-          <img src={cardImage} className={styles.image} alt="Фото товара" />
+          <img src={cardImage} className={styles.image} alt="Фотография товара" />
         </picture>
         <div className={styles.content}>
           <div
@@ -41,9 +41,7 @@ const Card = ({ item, quantity }: TGoodsItems) => {
             <p className={styles.price}>{price}</p>
           </div>
           {!quantity && (
-            <button className={styles.button} onClick={handleAddToCart}>
-              <CartIcon location="AddButton" />
-            </button>
+            <AddedButton location="AddButton" handler={handleAddToCart} />
           )}
           {quantity && <AddedControl quantity={quantity} />}
         </div>
