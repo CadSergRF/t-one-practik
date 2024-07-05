@@ -4,7 +4,7 @@ import styles from "./FAQContainer.module.css";
 
 const FAQContainer = () => {
   return (
-    <section className={styles.container}>
+    <section id="faq" className={styles.container}>
       <h2 className={styles.title}>FAQ</h2>
       <dl className={styles.list}>
         {mockFAQ.map((item) => (

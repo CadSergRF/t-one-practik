@@ -1,15 +1,24 @@
+import { MouseEvent } from "react";
+import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
+
+import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
+import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
+
 import { TCartItem } from "../../Types/cart.type";
 
 import styles from "./CartItem.module.css";
 
 import cardImage from "../../mock/image.jpg";
-import clsx from "clsx";
-import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
-import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
-import { MouseEvent } from "react";
 
 const CartItem = ({ item, quantity }: Required<TCartItem>) => {
-  const { name, price } = item;
+  const { id, name, price } = item;
+
+  const navigate = useNavigate();
+
+  const handleShowProduct = () => {
+    navigate(`/product/${id}`, { state: item });
+  };
 
   const handleDelete = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
@@ -28,7 +37,7 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
             <img src={cardImage} className={styles.image} alt="Фото товара" />
           </picture>
           <div className={styles.content}>
-            <h3 className={styles.item__title}>{name}</h3>
+            <h3 className={styles.item__title} onClick={handleShowProduct}>{name}</h3>
             <p className={styles.item__price}>
               {price}
               <span className={styles.item__price_currency}>&#36;</span>

@@ -1,6 +1,9 @@
 import styles from "./Hero.module.css";
 
+import { Button } from 'react-scroll';
+
 const Hero = () => {
+
   return (
     <section className={styles.wrapper}>
       <div className={styles.container}>
@@ -11,7 +14,7 @@ const Hero = () => {
             We sell smartphones, laptops, clothes, shoes and many other products
             at low prices
           </p>
-          <button className={styles.button}>Get to shopping</button>
+          <Button to="catalog" smooth className={styles.button}>Get to shopping</Button>
         </article>
       </div>
     </section>

@@ -1,30 +1,23 @@
 import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
-
 import clsx from "clsx";
 
 import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
+import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
 
-// import { TGoods } from "../../Types/goods.type";
+import { TGoodsItems } from "../../Types/goods.type";
 
 import styles from "./Card.module.css";
 
 import cardImage from "../../mock/image.jpg";
-import { TCartItem } from "../../Types/cart.type";
-import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
 
-// type Props = {
-//   item: TGoods;
-// };
-
-const Card = ({ item, quantity }: TCartItem) => {
-// const Card = ({ item }: Props) => {
+const Card = ({ item, quantity }: TGoodsItems) => {
   const { id, name, price } = item;
 
   const navigate = useNavigate();
 
   const handleShowProduct = () => {
-    navigate(`/product/${id}`, {state: item});
+    navigate(`/product/${id}`, { state: item });
   };
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -39,9 +32,11 @@ const Card = ({ item, quantity }: TCartItem) => {
           <img src={cardImage} className={styles.image} alt="Фото товара" />
         </picture>
         <div className={styles.content}>
-          <div className={clsx(styles.info, {
-            [styles.info_quantity]: quantity,
-          })}>
+          <div
+            className={clsx(styles.info, {
+              [styles.info_quantity]: quantity,
+            })}
+          >
             <h3 className={styles.name}>{name}</h3>
             <p className={styles.price}>{price}</p>
           </div>
@@ -50,9 +45,7 @@ const Card = ({ item, quantity }: TCartItem) => {
               <CartIcon location="AddButton" />
             </button>
           )}
-          {quantity && (
-            <AddedControl quantity={quantity}/>
-          )}
+          {quantity && <AddedControl quantity={quantity} />}
         </div>
       </article>
     </li>

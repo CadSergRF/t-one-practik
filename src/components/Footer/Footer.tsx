@@ -1,24 +1,24 @@
-import { Link } from 'react-router-dom';
+import { HashLink } from "react-router-hash-link";
 
-import styles from './Footer.module.css'
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
     <footer className={styles.wrapper}>
-      <Link to="/" className={styles.logo}>
+      <HashLink smooth to="/#top" className={styles.logo}>
         Goods4you
-      </Link>
+      </HashLink>
       <nav>
         <ul className={styles.menu}>
           <li>
-            <Link to="/catalog" className={styles.menu__item}>
+            <HashLink smooth to="/#catalog" className={styles.menu__item}>
               Catalog
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <Link to="/faq" className={styles.menu__item}>
+            <HashLink smooth to="/#faq" className={styles.menu__item}>
               FAQ
-            </Link>
+            </HashLink>
           </li>
         </ul>
       </nav>

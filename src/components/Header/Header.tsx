@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
 
@@ -10,33 +10,33 @@ const Header = () => {
 
   return (
     <header className={styles.wrapper}>
-      <Link to="/" className={styles.logo}>
+      <HashLink smooth to="/#top" className={styles.logo}>
         Goods4you
-      </Link>
+      </HashLink>
       <nav>
         <ul className={styles.menu}>
           <li>
-            <Link to="/catalog" className={styles.menu__item}>
+            <HashLink smooth to="/#catalog" className={styles.menu__item}>
               Catalog
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <Link to="/faq" className={styles.menu__item}>
+            <HashLink smooth to="/#faq" className={styles.menu__item}>
               FAQ
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <Link to="/cart" className={styles.cart__container}>
+            <HashLink smooth to="/cart#top" className={styles.cart__container}>
               <p className={styles.menu__item}>
                 Cart
               </p>
               <CartIcon counter={cartItems} location="Cart"/>
-            </Link>
+            </HashLink>
           </li>
           <li>
-            <Link to="/" className={styles.menu__item}>
+            <HashLink smooth to="/#top" className={styles.menu__item}>
               Johnson Smith
-            </Link>
+            </HashLink>
           </li>
         </ul>
       </nav>

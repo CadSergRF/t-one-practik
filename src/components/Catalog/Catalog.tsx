@@ -4,7 +4,7 @@ import styles from "./Catalog.module.css";
 
 const Catalog = () => {
   return (
-    <section className={styles.wrapper}>
+    <section id={"catalog"} className={styles.wrapper}>
       <h2 className={styles.title}>Catalog</h2>
       <label className={styles.search__label}>
         <input

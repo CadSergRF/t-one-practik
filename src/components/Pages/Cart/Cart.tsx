@@ -1,12 +1,12 @@
 import { FormEvent } from "react";
+import { Helmet } from "react-helmet";
+import clsx from "clsx";
 
 import { CartItem } from "../../CartItem/CartItem";
 
-import { mockCart } from "../../../mock/mock.cart";
-
 import styles from "./Cart.module.css";
-import clsx from "clsx";
-import { Helmet } from "react-helmet";
+
+import { mockCart } from "../../../mock/mock.cart";
 
 const Cart = () => {
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
