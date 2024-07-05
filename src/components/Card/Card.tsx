@@ -3,20 +3,23 @@ import { useNavigate } from "react-router-dom";
 
 import clsx from "clsx";
 
-import { CartIcon } from "../../assets/svgComponents/CartIcon/CartIcon";
+import { CartIcon } from "../UI-kit/CartIcon/CartIcon";
 
-import { TGoods } from "../../Types/goods.type";
+// import { TGoods } from "../../Types/goods.type";
 
 import styles from "./Card.module.css";
 
 import cardImage from "../../mock/image.jpg";
+import { TCartItem } from "../../Types/cart.type";
+import { AddedControl } from "../UI-kit/AddedControl/AddedControl";
 
-type Props = {
-  item: TGoods;
-};
+// type Props = {
+//   item: TGoods;
+// };
 
-const Card = ({ item }: Props) => {
-  const { id, name, price, quantity } = item;
+const Card = ({ item, quantity }: TCartItem) => {
+// const Card = ({ item }: Props) => {
+  const { id, name, price } = item;
 
   const navigate = useNavigate();
 
@@ -27,16 +30,6 @@ const Card = ({ item }: Props) => {
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
     console.log("Товар добавлен в корзину");
-  };
-
-  const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
-    evt.stopPropagation();
-    console.log("Количество товара уменьшено на 1");
-  };
-
-  const handlePlusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
-    evt.stopPropagation();
-    console.log("Количество товара увеличено на 1");
   };
 
   return (
@@ -54,19 +47,11 @@ const Card = ({ item }: Props) => {
           </div>
           {!quantity && (
             <button className={styles.button} onClick={handleAddToCart}>
-              <CartIcon counter={0} location="AddButton" />
+              <CartIcon location="AddButton" />
             </button>
           )}
           {quantity && (
-            <div className={styles.group__quantity}>
-              <button className={styles.button} onClick={handleMinusQuantity}>
-                <CartIcon counter={0} location="MinusButton" />
-              </button>
-              <p className={styles.quantity}>{quantity} item</p>
-              <button className={styles.button} onClick={handlePlusQuantity}>
-                <CartIcon counter={0} location="PlusButton" />
-              </button>
-            </div>
+            <AddedControl quantity={quantity}/>
           )}
         </div>
       </article>

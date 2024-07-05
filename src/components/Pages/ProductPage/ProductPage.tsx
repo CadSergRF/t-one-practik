@@ -18,7 +18,6 @@ const ProductPage = () => {
 
   return (
     <section className={styles.wrapper}>
-      <article className={styles.container}>
         {/* Галлерея */}
         <div className={styles.gallery}>
           <picture className={styles.wrapper__image}>
@@ -91,7 +90,6 @@ const ProductPage = () => {
             <button className={styles.add__button} onClick={handleAddToCart}>Add to cart</button>
           </section>
         </div>
-      </article>
     </section>
   );
 };

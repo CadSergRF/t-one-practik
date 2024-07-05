@@ -1,0 +1,83 @@
+.wrapper {
+  margin: 48px auto;
+  width: 1180px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.cart__title {
+  margin: 0;
+  font: 700 36px/56px "Jost";
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form {
+  padding: 0;
+}
+
+.form__list {
+  margin: 0;
+  padding: 20px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.total {
+  width: 356px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total__item {
+    display: flex;
+    justify-content: space-between;
+}
+
+.total__item_style {
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+}
+
+.total__count {
+    margin: 0;
+    font: 400 20px/30px 'Jost';
+    color: var(--text-cart-total);
+}
+
+.total__count_value {
+    color: var(--text-secondary);
+}
+
+.total__brutto {
+    margin: 0;
+    font: 600 20px/30px 'Jost';
+    color: var(--text-cart-total);
+}
+
+.total__brutto_value {
+    font-weight: 700;
+    color: var(--text-secondary);
+}
+
+.total__netto {
+    margin: 0;
+    font: 600 24px/36px 'Jost';
+    color: var(--text-cart-total);
+}
+
+.total__netto_value {
+    font-weight: 700;
+    color: var(--text-secondary);
+}

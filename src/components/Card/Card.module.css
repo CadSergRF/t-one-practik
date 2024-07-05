@@ -12,7 +12,7 @@
 }
 
 .wrapper__image::before {
-  content: 'Show details';
+  content: "Show details";
   position: absolute;
   top: 0;
   left: 0;
@@ -21,15 +21,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font: 800 26px/37.6px 'Jost';
+  font: 800 26px/37.6px "Jost";
   color: var(--text-image-hover);
   background-color: var(--image-hover);
   opacity: 0;
-  transition: opacity .3s linear;
+  transition: opacity 0.3s linear;
 }
 
 .wrapper__image:hover::before {
-  opacity: .8;
+  opacity: 0.8;
 }
 
 .image {
@@ -89,16 +89,10 @@
   cursor: pointer;
 }
 
-.group__quantity {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.button:hover {
+  background-color: var(--button-hover);
 }
 
-.quantity {
-  width: max-content;
-  margin: 0;
-  padding: 0;
-  font: 400 16px/22px 'Jost';
-  color: var(--text-product-name);
+.button:disabled {
+  background-color: var(--button-disabled);
 }

@@ -1,10 +1,6 @@
 .wrapper {
-  padding: 48px 0;
-}
-
-.container {
   width: 1180px;
-  margin: 0 auto;
+  margin: 48px auto;
   display: grid;
   grid-template-columns: 520px auto;
   gap: 40px;

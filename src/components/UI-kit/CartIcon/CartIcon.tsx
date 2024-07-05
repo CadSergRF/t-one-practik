@@ -2,7 +2,7 @@ import clsx from "clsx";
 import styles from "./CartIcon.module.css";
 
 type Props = {
-  counter: number;
+  counter?: number;
   location: "Cart" | "AddButton" | "MinusButton" | "PlusButton";
 };
 
@@ -15,7 +15,7 @@ const CartIcon = ({ counter, location }: Props) => {
         [styles.quantityBtn]:
           location === "MinusButton" || location === "PlusButton",
       })}
-      data-count={counter}
+      {...(counter && { 'data-count': `${counter}` })}
     >
       {location === "Cart" && (
         <svg

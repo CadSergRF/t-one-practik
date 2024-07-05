@@ -15,7 +15,7 @@ const Catalog = () => {
       </label>
       <ul className={styles.cart__list}>
         {mockGoods.map((item) => (
-            <Card key={item.id} item={item} />
+            <Card key={item.item.id} {...item} />
         ))}
       </ul>
       <button className={styles.button}>Show more</button>
