@@ -193,9 +193,14 @@
 @media screen and (max-width: 1250px) {
   .wrapper {
     width: 800px;
+    margin-bottom: 50px;
     padding: 0 30px;
     grid-template-columns: 370px auto;
     gap: 20px;
+  }
+
+  .main__image {
+    height: 370px;
   }
 
   .title {
@@ -220,6 +225,10 @@
     padding: 0 30px;
     grid-template-columns: 300px auto;
     gap: 20px;
+  }
+
+  .main__image {
+    height: 300px;
   }
 
   .title {
@@ -253,14 +262,23 @@
     grid-template-columns: 450px;
     gap: 20px;
   }
+
+  .main__image {
+    height: 450px;
+  }
 }
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 530px) {
   .wrapper {
     width: 250px;
+    margin-bottom: 30px;
     padding: 0 10px;
     grid-template-columns: 250px;
     gap: 20px;
+  }
+
+  .main__image {
+    height: 250px;
   }
 
   .category {
