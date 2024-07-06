@@ -1,12 +1,15 @@
 .group__quantity {
-  display: flex;
+  width: 188px;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
   align-items: center;
-  gap: 20px;
+  justify-items: center;
+  gap: 5px;
 }
 
 .quantity {
   width: max-content;
-  min-width: 50px;
+  max-width: 78px;
   margin: 0;
   padding: 0;
   font: 400 16px/22px "Jost";
@@ -14,11 +17,10 @@
 }
 
 @media screen and (max-width: 630px) {
-  
   .group__quantity {
     gap: 10px;
   }
-  
+
   .quantity {
     font-size: 12px;
     line-height: 16px;

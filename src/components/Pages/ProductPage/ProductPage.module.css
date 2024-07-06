@@ -1,6 +1,7 @@
 .wrapper {
   width: 1180px;
   margin: 48px auto;
+  margin-bottom: 155px;
   display: grid;
   grid-template-columns: 520px auto;
   gap: 40px;
@@ -17,12 +18,13 @@
 
 .main__image {
   width: 100%;
-  max-height: 100%;
+  height: 520px;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
 .scroll__gallery {
+  margin-top: 3px;
   display: flex;
   overflow-x: auto;
   gap: 20px;
@@ -31,19 +33,19 @@
 }
 
 .scroll__gallery::-webkit-scrollbar {
-	width: 17px;
+  width: 17px;
 }
 
 .scroll__gallery::-webkit-scrollbar-track {
-	background-color: var(--text-category);
-	border-radius: 100px;
+  background-color: var(--text-category);
+  border-radius: 100px;
 }
 
 .scroll__gallery::-webkit-scrollbar-thumb {
-	border-radius: 13px;
-	border: 6px solid transparent;
-	background-clip: content-box;
-	background-color: var(--text-category);
+  border-radius: 13px;
+  border: 6px solid transparent;
+  background-clip: content-box;
+  background-color: var(--text-category);
 }
 
 .scroll__item {
@@ -65,6 +67,7 @@
 
 .title {
   margin: 0;
+  margin-bottom: 18px;
   font: 600 36px/56px "Jost";
   color: var(--text-product-name);
   text-align: left;
@@ -76,7 +79,7 @@
 }
 .rating {
   display: flex;
-  gap: 4px;
+  gap: 9px;
 }
 
 .category {
@@ -88,7 +91,7 @@
 
 .stock {
   margin: 0;
-  padding: 12px 0;
+  padding: 10px 0;
   font: 500 18px/24px "Jost";
   color: var(--text-rek);
   text-align: left;
@@ -137,52 +140,54 @@
 }
 
 .prices {
-    border-right: 1px solid var(--border);
+  padding: 0 26px 0 20px;
+  border-right: 1px solid var(--border);
 }
 
 .price {
-    margin: 0;
-    padding: 0 24px 0 20px;
-    font: 600 36px/40px 'Jost';
-    color: var(--text-product-price);
+  margin: 0;
+  font: 600 36px/40px "Jost";
+  color: var(--text-product-price);
 }
 
 .price__old {
-    margin: 0;
-    padding: 0;
-    font: 500 16px/20px 'Jost';
-    color: var(--text-category);
-    text-decoration: line-through;
+  margin: 0;
+  margin-top: 4px;
+  padding: 0;
+  font: 500 16px/20px "Jost";
+  color: var(--text-category);
+  text-align: left;
+  text-decoration: line-through;
 }
 
 .prices__text {
-    margin: 0;
-    padding: 0 20px 0 24px;
-    font: 400 16px/24px 'Jost';
-    color: var(--text-product-price);
+  margin: 0;
+  padding: 0 20px 0 24px;
+  font: 400 16px/24px "Jost";
+  color: var(--text-product-price);
 }
 
 .prices__text_discount {
-    padding-left: 8px;
-    font-weight: 600;
+  padding-left: 8px;
+  font-weight: 600;
 }
 
 .add__button {
-    padding: 20px 50px;
-    border: none;
-    border-radius: 4px;
-    background-color: var(--button-primary);
-    font: 400 16px/22px 'Jost';
-    color: var(--text-primary);
-    cursor: pointer;
+  padding: 20px 50px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+  font: 400 16px/22px "Jost";
+  color: var(--text-primary);
+  cursor: pointer;
 }
 
 .add__button:hover {
-    background-color: var(--button-hover);
+  background-color: var(--button-hover);
 }
 
 .add__button:disabled {
-    background-color: var(--button-disabled);
+  background-color: var(--button-disabled);
 }
 
 @media screen and (max-width: 1250px) {
@@ -201,11 +206,11 @@
     font-size: 16px;
     line-height: 24px;
   }
-  
+
   .buy {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px
+    gap: 15px;
   }
 }
 
@@ -233,11 +238,11 @@
   .other {
     gap: 5px;
   }
-  
+
   .buy {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px
+    gap: 15px;
   }
 }
 
@@ -263,10 +268,10 @@
   }
 
   .price {
-      padding: 0 5px;
+    padding: 0 5px;
   }
-  
+
   .prices__text {
-      padding: 0 5px;
+    padding: 0 5px;
   }
 }

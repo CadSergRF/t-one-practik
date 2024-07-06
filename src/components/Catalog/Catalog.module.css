@@ -44,11 +44,12 @@
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px 35px;
+  gap: 26px 35px;
   list-style-type: none;
 }
 
 .button {
+  margin-top: 5px;
   align-self: center;
   width: 177px;
   height: 62px;

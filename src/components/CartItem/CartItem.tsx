@@ -39,7 +39,11 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
           })}
         >
           <picture className={styles.wrapper__image}>
-            <img src={cardImage} className={styles.image} alt="Фотография товара" />
+            <img
+              src={cardImage}
+              className={styles.image}
+              alt="Фотография товара"
+            />
           </picture>
           <div className={styles.content}>
             <h3 className={styles.item__title} onClick={handleShowProduct}>
@@ -59,14 +63,9 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
             </button>
           </div>
         ) : (
-          // <button
-          //   type="button"
-          //   className={styles.button}
-          //   onClick={handleDelete}
-          // >
-          //   <CartIcon location="AddButton" />
-          // </button>
-          <AddedButton location="AddButton" handler={handleAddToCart} />
+          <div className={styles.controls}>
+            <AddedButton location="AddButton" handler={handleAddToCart} />
+          </div>
         )}
       </article>
     </li>

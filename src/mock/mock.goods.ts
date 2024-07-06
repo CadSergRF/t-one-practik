@@ -5,14 +5,14 @@ export const mockGoods: TGoodsItems[] = [
     item: {
       id: 1,
       name: "Essence Mascara Lash Princess",
-      price: 7.17,
+      price: 110,
     },
   },
   {
     item: {
       id: 2,
       name: "Essence Mascara Lash Princess",
-      price: 7.17,
+      price: 110,
     },
   },
   {
@@ -40,7 +40,7 @@ export const mockGoods: TGoodsItems[] = [
     item: {
       id: 6,
       name: "Essence Mascara Lash Princess",
-      price: 7.17,
+      price: 110,
     },
     quantity: 1,
   },

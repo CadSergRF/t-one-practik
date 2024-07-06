@@ -40,7 +40,7 @@
 }
 
 .content {
-  margin-top: 10px;
+  margin-top: 3px;
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -56,6 +56,7 @@
 
 .name {
   margin: 0;
+  margin-bottom: 5px;
   font: 600 16px/20px "Jost";
   color: var(--text-product-name);
   text-overflow: ellipsis;

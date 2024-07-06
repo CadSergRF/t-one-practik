@@ -1,5 +1,6 @@
 .wrapper {
   margin: 48px auto;
+  margin-bottom: 92px;
   width: 1180px;
   display: flex;
   flex-direction: column;
@@ -20,12 +21,13 @@
 }
 
 .form {
+  min-width: 775px;
   padding: 0;
 }
 
 .form__list {
   margin: 0;
-  padding: 20px;
+  padding: 19px 38px;
   list-style-type: none;
   display: flex;
   flex-direction: column;
@@ -76,7 +78,7 @@
 
 .total__netto {
   margin: 0;
-  font: 600 24px/36px "Jost";
+  font: 600 24px/32px "Jost";
   color: var(--text-cart-total);
 }
 

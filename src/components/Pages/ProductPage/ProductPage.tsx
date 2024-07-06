@@ -6,7 +6,7 @@ import { TGoods } from "../../../Types/goods.type";
 
 import styles from "./ProductPage.module.css";
 
-import mainImage from "../../../mock/image.jpg";
+import mainImage from "../../../mock/main photo.jpg";
 import { ErrorPage } from "../ErrorPage/ErrorPage";
 
 const ProductPage = () => {
