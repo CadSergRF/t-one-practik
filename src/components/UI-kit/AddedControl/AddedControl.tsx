@@ -9,22 +9,23 @@ type Props = {
 };
 
 const AddedControl = ({ quantity }: Props) => {
-
   const priceWord = quantity > 1 ? "items" : "item";
 
   const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Количество товара уменьшено на 1");
+    console.log("The quantity of the product has been reduced by 1");
   };
 
   const handlePlusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Количество товара увеличено на 1");
+    console.log("The quantity of the product has been increased by 1");
   };
   return (
     <div className={styles.group__quantity}>
       <AddedButton location="MinusButton" handler={handleMinusQuantity} />
-      <p className={styles.quantity}>{quantity}&#160;{priceWord}</p>
+      <p className={styles.quantity}>
+        {quantity}&#160;{priceWord}
+      </p>
       <AddedButton location="PlusButton" handler={handlePlusQuantity} />
     </div>
   );

@@ -5,7 +5,12 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={styles.wrapper}>
-      <HashLink smooth to="/#top" className={styles.logo} aria-label="Go to the main page">
+      <HashLink
+        smooth
+        to="/#top"
+        className={styles.logo}
+        aria-label="Go to the main page"
+      >
         Goods4you
       </HashLink>
       <nav aria-label="page navigation">

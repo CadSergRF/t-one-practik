@@ -18,6 +18,7 @@
 .plus {
   width: 25px;
   height: 25px;
+  -o-object-fit: cover;
   object-fit: cover;
   margin: 0;
   will-change: transform;
@@ -32,6 +33,7 @@
   display: grid;
   grid-template-rows: 0fr;
   transition: grid-template-rows 0.5s ease-out;
+  transition: grid-template-rows 0.5s ease-out, -ms-grid-rows 0.5s ease-out;
 }
 
 .answer_open {

@@ -7,12 +7,7 @@ import { TFAQ } from "../../Types/faq.type";
 
 import styles from "./FAQItem.module.css";
 
-type Props = {
-  faqItem: TFAQ;
-};
-
-const FAQItem = ({ faqItem }: Props) => {
-  const { question, answer } = faqItem;
+const FAQItem = ({ answer, question }: TFAQ) => {
 
   const [open, setOpen] = useState(false);
 
@@ -30,7 +25,7 @@ const FAQItem = ({ faqItem }: Props) => {
             [styles.plus_rotate]: open,
           })}
           tabIndex={0}
-          alt="Кнопка открытия или закрытия элемента faq"
+          alt="Button: Show or hide the answer"
         />
       </div>
       <div

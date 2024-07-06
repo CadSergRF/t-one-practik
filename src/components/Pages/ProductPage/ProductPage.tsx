@@ -18,11 +18,11 @@ const ProductPage = () => {
   } else {
     const { name, price } = location.state as TGoods;
 
-    const ariaText = 'Product page - ' + name
+    const ariaText = "Product page - " + name;
 
     const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
       evt.stopPropagation();
-      console.log("Товар добавлен в корзину");
+      console.log("The product has been added to the cart");
     };
 
     return (
@@ -31,13 +31,13 @@ const ProductPage = () => {
           <title>{name} | Goods4you</title>
         </Helmet>
         <section className={styles.wrapper} aria-label={ariaText}>
-          {/* Галерея */}
+{/* -------------- Product gallery --------------*/}
           <div className={styles.gallery}>
             <picture className={styles.wrapper__image}>
               <img
                 src={mainImage}
                 className={styles.main__image}
-                alt="Фотография товара"
+                alt="Product photo"
               />
             </picture>
             <div className={styles.scroll__gallery}>
@@ -46,13 +46,13 @@ const ProductPage = () => {
                   <img
                     src={mainImage}
                     className={styles.scroll__image}
-                    alt="Фотография товара"
+                    alt="Product photo"
                   />
                 </picture>
               ))}
             </div>
           </div>
-          {/* Информация о товаре */}
+{/* -------------- Product info --------------*/}
           <div className={styles.info}>
             <div>
               <h2 className={styles.title}>{name}</h2>
@@ -101,7 +101,11 @@ const ProductPage = () => {
                   <span className={styles.prices__text_discount}>14.5%</span>
                 </p>
               </div>
-              <button className={styles.add__button} onClick={handleAddToCart} aria-label="Add an item to the shopping cart">
+              <button
+                className={styles.add__button}
+                onClick={handleAddToCart}
+                aria-label="Add an item to the shopping cart"
+              >
                 Add to cart
               </button>
             </section>

@@ -27,6 +27,26 @@
   background-color: var(--background-color-input);
 }
 
+.search__input::-webkit-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::-moz-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input:-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
 .search__input::placeholder {
   font: 400 16px/22px "Jost";
   color: var(--text-placeholder);

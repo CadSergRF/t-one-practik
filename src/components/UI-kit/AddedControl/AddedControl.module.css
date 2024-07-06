@@ -8,6 +8,8 @@
 }
 
 .quantity {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   max-width: 78px;
   margin: 0;

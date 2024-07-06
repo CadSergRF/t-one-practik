@@ -1,6 +1,6 @@
-@import url('./assets/styles/normalize.css');
-@import url('./assets/fonts/fonts.css');
-@import url('./assets/styles/variables.css');
+@import url("./assets/styles/normalize.css");
+@import url("./assets/fonts/fonts.css");
+@import url("./assets/styles/variables.css");
 
 :root {
   font-family: "Jost", sans-serif;
@@ -21,6 +21,6 @@
   max-width: 1440px;
   min-height: 100vh;
   display: grid;
+  grid-template-rows: -webkit-max-content auto -webkit-max-content;
   grid-template-rows: max-content auto max-content;
 }
-

@@ -18,6 +18,8 @@
   padding: 0;
   list-style-type: none;
   display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   gap: 40px;
 }
@@ -45,7 +47,6 @@
     padding: 0 50px;
   }
 }
-
 
 @media screen and (max-width: 650px) {
   .logo {

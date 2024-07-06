@@ -2,6 +2,7 @@
   min-height: 90px;
   padding: 0 130px;
   display: grid;
+  grid-template-columns: -webkit-max-content auto;
   grid-template-columns: max-content auto;
   align-items: center;
   gap: 30px;
@@ -25,6 +26,8 @@
   padding: 0;
   list-style-type: none;
   display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   gap: 41px;
 }
@@ -75,12 +78,12 @@
     align-items: center;
     gap: 0;
   }
-  
+
   .logo {
     justify-self: center;
     line-height: 24px;
   }
-  
+
   .menu__wrapper {
     justify-self: center;
   }
