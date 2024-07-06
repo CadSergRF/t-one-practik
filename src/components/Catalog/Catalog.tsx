@@ -6,7 +6,7 @@ import { mockGoods } from "../../mock/mock.goods";
 
 const Catalog = () => {
   return (
-    <section id={"catalog"} className={styles.wrapper}>
+    <section id={"catalog"} className={styles.wrapper} aria-label="section Catalog">
       <h2 className={styles.title}>Catalog</h2>
       <label className={styles.search__label}>
         <input
@@ -20,7 +20,7 @@ const Catalog = () => {
             <Card key={item.item.id} {...item} />
         ))}
       </ul>
-      <button className={styles.button}>Show more</button>
+      <button className={styles.button} aria-label='show more products'>Show more</button>
     </section>
   );
 };

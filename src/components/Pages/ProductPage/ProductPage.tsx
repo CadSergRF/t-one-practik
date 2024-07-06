@@ -18,6 +18,8 @@ const ProductPage = () => {
   } else {
     const { name, price } = location.state as TGoods;
 
+    const ariaText = 'Product page - ' + name
+
     const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
       evt.stopPropagation();
       console.log("Товар добавлен в корзину");
@@ -28,7 +30,7 @@ const ProductPage = () => {
         <Helmet>
           <title>{name} | Goods4you</title>
         </Helmet>
-        <section className={styles.wrapper}>
+        <section className={styles.wrapper} aria-label={ariaText}>
           {/* Галерея */}
           <div className={styles.gallery}>
             <picture className={styles.wrapper__image}>
@@ -99,7 +101,7 @@ const ProductPage = () => {
                   <span className={styles.prices__text_discount}>14.5%</span>
                 </p>
               </div>
-              <button className={styles.add__button} onClick={handleAddToCart}>
+              <button className={styles.add__button} onClick={handleAddToCart} aria-label="Add an item to the shopping cart">
                 Add to cart
               </button>
             </section>

@@ -22,7 +22,7 @@ const Cart = () => {
       <Helmet>
         <title>My cart | Goods4you</title>
       </Helmet>
-      <section className={styles.wrapper}>
+      <section className={styles.wrapper} aria-label="My cart">
         <h2 className={styles.cart__title}>My cart</h2>
         <article className={styles.container}>
           <form className={styles.form} onSubmit={handleSubmit}>

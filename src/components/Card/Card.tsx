@@ -26,7 +26,7 @@ const Card = ({ item, quantity }: TGoodsItems) => {
   };
 
   return (
-    <li>
+    <li tabIndex={0} aria-label="Preview of the product card. When you click, you go to the product page.">
       <article className={styles.wrapper} onClick={handleShowProduct}>
         <picture className={styles.wrapper__image}>
           <img src={cardImage} className={styles.image} alt="Фотография товара" />

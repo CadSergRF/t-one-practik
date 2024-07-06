@@ -46,7 +46,7 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
             />
           </picture>
           <div className={styles.content}>
-            <h3 className={styles.item__title} onClick={handleShowProduct}>
+            <h3 className={styles.item__title} onClick={handleShowProduct} tabIndex={0} aria-label="When you click, you go to the product page.">
               {name}
             </h3>
             <p className={styles.item__price}>
@@ -58,7 +58,7 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
         {quantity > 0 ? (
           <div className={styles.controls}>
             <AddedControl quantity={quantity} />
-            <button className={styles.delete__button} onClick={handleDelete}>
+            <button className={styles.delete__button} onClick={handleDelete} aria-label='Remove an item from the shopping cart'>
               Delete
             </button>
           </div>

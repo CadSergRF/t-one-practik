@@ -9,8 +9,18 @@ type Props = {
 };
 
 const AddedButton = ({ location, handler }: Props) => {
+
+  let ariaText: string;
+  if (location === "AddButton") {
+    ariaText = "Add an item to the shopping cart"
+  } else if (location === "MinusButton") {
+    ariaText = "Reduce the number of items in the cart by 1"
+  } else {
+    ariaText = "Increase the number of items in the cart by 1"
+  }
+
   return (
-    <button className={styles.button} onClick={handler}>
+    <button className={styles.button} onClick={handler} aria-label={ariaText}>
     <div
       className={clsx({
         [styles.addButton]: location === "AddButton",

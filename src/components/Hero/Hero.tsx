@@ -14,7 +14,7 @@ const Hero = () => {
             We sell smartphones, laptops, clothes, shoes and many other products
             at low prices
           </p>
-          <Button to="catalog" smooth className={styles.button}>Get to shopping</Button>
+          <Button to="catalog" smooth className={styles.button} aria-label="Go to the product catalog">Get to shopping</Button>
         </article>
       </div>
     </section>

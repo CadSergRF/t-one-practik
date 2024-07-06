@@ -51,6 +51,10 @@
   cursor: pointer;
 }
 
+.item__title:hover {
+  text-decoration: underline;
+}
+
 .item__price {
   margin: 0;
   font: 400 18px/26px "Jost";

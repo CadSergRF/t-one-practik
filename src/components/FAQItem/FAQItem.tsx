@@ -29,6 +29,7 @@ const FAQItem = ({ faqItem }: Props) => {
           className={clsx(styles.plus, {
             [styles.plus_rotate]: open,
           })}
+          tabIndex={0}
           alt="Кнопка открытия или закрытия элемента faq"
         />
       </div>

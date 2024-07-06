@@ -4,7 +4,7 @@ import styles from "./FAQContainer.module.css";
 
 const FAQContainer = () => {
   return (
-    <section id="faq" className={styles.wrapper}>
+    <section id="faq" className={styles.wrapper} aria-label="section Answer-Question">
       <article className={styles.container}>
         <h2 className={styles.title}>FAQ</h2>
         <dl className={styles.list}>
