@@ -3,6 +3,14 @@
   cursor: pointer;
 }
 
+.wrapper:hover .wrapper__image::before {
+  opacity: 1;
+}
+
+.wrapper:hover .name {
+  text-decoration: underline;
+}
+
 .wrapper__image {
   display: inline-block;
   width: 100%;
@@ -26,10 +34,6 @@
   background-color: var(--image-hover);
   opacity: 0;
   transition: opacity 0.3s linear;
-}
-
-.wrapper__image:hover::before {
-  opacity: 0.8;
 }
 
 .image {
