@@ -11,7 +11,7 @@ const Catalog = () => {
       className={styles.wrapper}
       aria-label="section Catalog"
     >
-      <h2 className={styles.title}>Catalog</h2>
+      <h1 className={styles.title}>Catalog</h1>
       <label className={styles.search__label}>
         <input
           type="search"

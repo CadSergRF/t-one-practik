@@ -16,7 +16,7 @@ const ProductPage = () => {
   if (!location.state?.name) {
     return <ErrorPage />;
   } else {
-    const { name, price } = location.state as TGoods;
+    const { name } = location.state as TGoods;
 
     const ariaText = "Product page - " + name;
 
@@ -55,7 +55,7 @@ const ProductPage = () => {
 {/* -------------- Product info --------------*/}
           <div className={styles.info}>
             <div>
-              <h2 className={styles.title}>{name}</h2>
+              <h1 className={styles.title}>{name}</h1>
               <div className={styles.info__meta}>
                 <div className={styles.rating}>
                   {Array.from({ length: 5 }).map((_, idx) => (
@@ -93,7 +93,7 @@ const ProductPage = () => {
             <section className={styles.buy}>
               <div className={styles.prices__wrapper}>
                 <div className={styles.prices}>
-                  <p className={styles.price}>{price}&#36;</p>
+                  <p className={styles.price}>7.17&#36;</p>
                   <p className={styles.price__old}>9.99&#36;</p>
                 </div>
                 <p className={styles.prices__text}>

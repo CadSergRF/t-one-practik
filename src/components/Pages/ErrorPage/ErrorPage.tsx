@@ -12,7 +12,7 @@ const ErrorPage = () => {
       <div className={styles.wrapper}>
         <div>
           <p className={styles.text}>{window.location.href}</p>
-          <p className={styles.text}>the page does not exist</p>
+          <h1 className={styles.text}>the page does not exist</h1>
           <Link to="/" replace className={styles.link}>
             to MainPage
           </Link>
