@@ -1,0 +1,31 @@
+.group__quantity {
+  width: 188px;
+  display: grid;
+  grid-template-columns: 50px auto 50px;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+
+.quantity {
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  max-width: 78px;
+  margin: 0;
+  padding: 0;
+  font: 400 16px/22px "Jost";
+  color: var(--text-product-name);
+}
+
+@media screen and (max-width: 630px) {
+  .group__quantity {
+    gap: 10px;
+  }
+
+  .quantity {
+    font-size: 12px;
+    line-height: 16px;
+    min-width: 30px;
+  }
+}
