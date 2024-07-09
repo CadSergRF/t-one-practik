@@ -1,0 +1,119 @@
+.wrapper {
+  max-width: 100%;
+  height: 500px;
+
+  background-color: var(--background-color-secondary);
+}
+
+.container {
+  height: 100%;
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+  position: relative;
+}
+
+.back__text {
+  padding-bottom: 78px;
+
+  font-weight: 700;
+  font-size: calc(48px + 152 * ((100vw - 320px) / 1440));
+  line-height: calc(72px + 228 * ((100vw - 320px) / 1440));
+  font-family: "Jost";
+  color: var(--text-back);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 30px;
+
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.header {
+  width: 550px;
+
+  display: inline-block;
+
+  font: 400 36px/50px "Jost";
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.text {
+  width: 350px;
+
+  display: inline-block;
+
+  font: 600 16px/24px "Jost";
+  text-align: left;
+  color: var(--text-primary);
+}
+
+@media screen and (max-width: 1100px) {
+  .wrapper {
+    height: 330px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .wrapper {
+    height: 250px;
+    padding: 20px;
+  }
+
+  .header {
+    width: 350px;
+
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .text {
+    width: 250px;
+
+    font-size: 12px;
+    line-height: 18px;
+  }
+
+  .back__text {
+    padding-bottom: 0;
+
+    font-size: calc(48px + 152 * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(72px + 228 * ((100vw - 320px) / (1440 - 320)));
+    font-family: "Jost";
+    color: var(--text-back);
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .wrapper {
+    height: 230px;
+    padding-bottom: 0;
+  }
+
+  .content {
+    gap: 20px;
+  }
+
+  .header {
+    width: 100%;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .back__text {
+    padding-bottom: 40px;
+  }
+}

@@ -1,0 +1,16 @@
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
+  gap: 41px;
+}
+
+@media screen and (max-width: 650px) {
+  .menu {
+    gap: 20px;
+  }
+}

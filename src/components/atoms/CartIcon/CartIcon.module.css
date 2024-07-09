@@ -1,0 +1,21 @@
+.cart {
+  width: 20px;
+  height: 20px;
+  position: relative;
+}
+
+.cart::before {
+  content: attr(data-count);
+  position: absolute;
+  bottom: -4px;
+  right: -4px;
+  border-radius: 50%;
+  background-color: var(--button-primary);
+  font: 400 8px/8px "Jost";
+  color: var(--text-primary);
+  width: 12px;
+  height: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

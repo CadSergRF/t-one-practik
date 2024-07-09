@@ -1,0 +1,42 @@
+.form {
+  min-width: 775px;
+  padding: 0;
+}
+
+.form__list {
+  margin: 0;
+  padding: 19px 38px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1250px) {
+  .form {
+    min-width: 150px;
+  }
+
+  .form__list {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .form {
+    min-width: 325px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .form {
+    min-width: 250px;
+  }
+
+  .form__list {
+    border: none;
+    gap: 30px;
+  }
+}

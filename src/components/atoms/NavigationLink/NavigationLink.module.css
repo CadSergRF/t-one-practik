@@ -1,0 +1,22 @@
+.menu__item {
+  margin: 0;
+  font: 600 14px/24px "Jost", sans-serif;
+  text-decoration: none;
+  color: var(--link-bg);
+}
+
+.menu__item:hover {
+  color: var(--link-bg-hover);
+  text-decoration: underline;
+}
+
+.cart__container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.cart__container:hover .menu__item {
+  color: var(--link-bg-hover);
+  text-decoration: underline;
+}

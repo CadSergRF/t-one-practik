@@ -1,0 +1,86 @@
+.wrapper {
+  margin: 48px auto;
+  margin-bottom: 92px;
+  width: 1180px;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
+
+.cart__title {
+  margin: 0;
+  font: 700 36px/56px "Jost";
+  text-align: left;
+  color: var(--text-secondary);
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.form {
+  min-width: 775px;
+  padding: 0;
+}
+
+.form__list {
+  margin: 0;
+  padding: 19px 38px;
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    width: auto;
+    padding: 0 30px;
+  }
+
+  .form {
+    min-width: 150px;
+  }
+
+  .form__list {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form {
+    min-width: 325px;
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .form {
+    min-width: 250px;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 250px;
+    justify-content: center;
+    gap: 50px;
+  }
+
+  .form__list {
+    border: none;
+    gap: 30px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .wrapper {
+    padding: 0 20px;
+  }
+}

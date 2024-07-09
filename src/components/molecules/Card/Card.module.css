@@ -1,0 +1,140 @@
+.wrapper {
+  width: 100%;
+  max-width: 370px;
+  min-width: 340px;
+}
+
+.container {
+  cursor: pointer;
+}
+
+.wrapper__image {
+  width: 100%;
+  height: 300px;
+  max-height: 300px;
+
+  display: inline-block;
+
+  position: relative;
+}
+
+.wrapper__image::before {
+  content: "Show details";
+
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  background-color: var(--image-hover);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font: 800 26px/37.6px "Jost";
+  color: var(--text-image-hover);
+
+  opacity: 0;
+
+  transition: opacity 0.3s linear;
+}
+
+.wrapper__image:hover::before,
+.wrapper__image:focus::before {
+  opacity: 0.8;
+}
+
+.wrapper__image:focus {
+  outline: none;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.content {
+  margin-top: 3px;
+
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.info {
+  width: 100%;
+  min-width: 173px;
+}
+
+.name {
+  margin-bottom: 5px;
+
+  font: 600 16px/20px "Jost";
+  color: var(--text-product-name);
+
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.price {
+  margin: 0;
+
+  font: 400 18px/24px "Jost";
+  color: var(--text-product-price);
+  text-align: left;
+}
+
+.price::after {
+  padding-left: 5px;
+
+  content: "$";
+
+  font: 400 18px/24px "Jost";
+  color: var(--text-product-price);
+}
+
+@media screen and (max-width: 880px) {
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .wrapper__image {
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .content {
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .content {
+    flex-wrap: nowrap;
+  }
+
+  .wrapper__image {
+    height: 300px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .wrapper {
+    min-width: 250px;
+  }
+
+  .content {
+    flex-wrap: wrap;
+  }
+
+  .wrapper__image {
+    height: 200px;
+  }
+}

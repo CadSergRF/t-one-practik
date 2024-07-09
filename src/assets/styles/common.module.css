@@ -1,0 +1,27 @@
+.alignment {
+  padding: 0 130px;
+}
+
+@media screen and (max-width: 1366px) {
+  .alignment {
+    padding: 0 70px;
+  }
+}
+
+@media screen and (max-width: 1250px) {
+  .alignment {
+    padding: 0 50px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .alignment {
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .alignment {
+    padding: 0 10px;
+  }
+}

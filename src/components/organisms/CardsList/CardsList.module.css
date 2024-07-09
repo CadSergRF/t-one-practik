@@ -1,0 +1,22 @@
+.cart__list {
+  max-width: 100%;
+  
+  list-style-type: none;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px 35px;
+}
+
+@media screen and (max-width: 1210px) {
+  .cart__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px 25px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .cart__list {
+    grid-template-columns: 1fr;
+  }
+}

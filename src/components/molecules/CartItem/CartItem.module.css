@@ -1,0 +1,173 @@
+.wrapper {
+  padding: 12px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.wrapper:hover {
+  background-color: var(--background-color-input);
+}
+
+.info__block {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  will-change: opacity;
+}
+
+.info__block_opacity {
+  opacity: 0.6;
+}
+
+.wrapper__image {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.content {
+  max-width: 250px;
+}
+
+.item__title {
+  margin: 0;
+  font: 600 16px/22px "Jost";
+  color: var(--text-product-name);
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.item__title:hover {
+  text-decoration: underline;
+}
+
+.item__price {
+  margin: 0;
+  font: 400 18px/26px "Jost";
+  color: var(--text-product-name);
+  text-align: left;
+}
+
+.item__price_currency {
+  padding-left: 5px;
+}
+
+.controls {
+  padding-right: 13px;
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+
+.delete__button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  font: 400 14px/20px "Jost";
+  color: var(--text-placeholder);
+}
+
+.delete__button:hover {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.button {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-primary);
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.button:focus {
+  outline: 2px solid var(--button-hover);
+}
+
+.button:disabled {
+  background-color: var(--button-disabled);
+}
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    gap: 15px;
+  }
+
+  .form__list {
+    padding: 0;
+  }
+
+  .item__title {
+    max-width: 200px;
+  }
+
+  .controls {
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+  }
+}
+
+@media screen and (max-width: 630px) {
+  .item__title {
+    max-width: 150px;
+  }
+}
+
+@media screen and (max-width: 580px) {
+  .wrapper {
+    padding: 0;
+    gap: 5px;
+  }
+
+  .info__block {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .wrapper__image {
+    width: 250px;
+    height: 200px;
+  }
+
+  .wrapper__image {
+    width: 100%;
+  }
+
+  .item__title {
+    max-width: 100%;
+  }
+
+  .item__price {
+    text-align: center;
+  }
+}
