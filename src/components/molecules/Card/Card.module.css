@@ -4,6 +4,14 @@
   min-width: 340px;
 }
 
+.wrapper:hover .wrapper__image::before {
+  opacity: 1;
+}
+
+.wrapper:hover .name {
+  text-decoration: underline;
+}
+
 .container {
   cursor: pointer;
 }

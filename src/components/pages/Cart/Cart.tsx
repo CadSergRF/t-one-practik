@@ -1,10 +1,10 @@
 import { Helmet } from "react-helmet-async";
 
-// import { CartTotalView } from "../../molecules/CartTotalView/CartTotalView";
+import { CartTotalView } from "../../molecules/CartTotalView/CartTotalView";
 
 import styles from "./Cart.module.css";
-// import CartLayout from "../../templates/CartLayout/CartLayout";
-// import { CartItemsView } from "../../organisms/CartItemsView/CartItemsView";
+import CartLayout from "../../templates/CartLayout/CartLayout";
+import { CartItemsView } from "../../organisms/CartItemsView/CartItemsView";
 
 
 const Cart = () => {
@@ -16,11 +16,11 @@ const Cart = () => {
       </Helmet>
       <section className={styles.wrapper} aria-label="My cart">
         <h1 className={styles.cart__title}>My cart</h1>
-        {/* <article className={styles.container}>
+        <article className={styles.container}>
           <CartItemsView />
           <CartTotalView cartQuantity={3}/>
-        </article> */}
-        {/* <CartLayout /> */}
+        </article>
+        <CartLayout />
       </section>
     </>
   );

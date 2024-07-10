@@ -1,3 +1,4 @@
+import clsx from "clsx";
 import { CartSVGIcon } from "../Icons/CartSVGIcon";
 
 import styles from "./CartIcon.module.css";
@@ -8,7 +9,9 @@ type Props = {
 
 const CartIcon = ({ counter }: Props) => {
   return (
-    <div className={styles.cart} data-count={counter}>
+    <div className={clsx(styles.cart, {
+      [styles.cart__counter]: (counter > 0),
+    })} data-count={counter}>
       <CartSVGIcon />
     </div>
   );

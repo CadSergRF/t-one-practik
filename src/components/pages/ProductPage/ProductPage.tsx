@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet-async";
 
 import { ErrorPage } from "../ErrorPage/ErrorPage";
 
-import { TGoods } from "../../../Types/goods.type";
+import { TGoods } from "../../../Types/products.type";
 
 import styles from "./ProductPage.module.css";
 

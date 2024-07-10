@@ -4,14 +4,15 @@ import { useNavigate } from "react-router-dom";
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 import { AddedControl } from "../AddedControl/AddedControl";
 
-import { TGoodsItems } from "../../../Types/goods.type";
-
 import styles from "./Card.module.css";
 
 import cardImage from "../../../mock/image.jpg";
+import { TProductFull } from "../../../Types/products.type";
 
-const Card = ({ item, quantity }: TGoodsItems) => {
-  const { id, name, price } = item;
+const Card = (item: TProductFull) => {
+  const { id, title, price } = item;
+
+  const quantity = 0
 
   const navigate = useNavigate();
 
@@ -36,7 +37,7 @@ const Card = ({ item, quantity }: TGoodsItems) => {
         </picture>
         <div className={styles.content}>
           <div className={styles.info}>
-            <h3 className={styles.name}>{name}</h3>
+            <h3 className={styles.name}>{title}</h3>
             <p className={styles.price}>{price}</p>
           </div>
           {!quantity && (

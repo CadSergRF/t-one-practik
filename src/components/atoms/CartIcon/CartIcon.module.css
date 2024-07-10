@@ -1,10 +1,13 @@
 .cart {
   width: 20px;
   height: 20px;
+}
+
+.cart__counter {
   position: relative;
 }
 
-.cart::before {
+.cart__counter::before {
   content: attr(data-count);
   position: absolute;
   bottom: -4px;

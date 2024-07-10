@@ -13,3 +13,7 @@
   font: 700 36px/56px "Jost";
   color: var(--text-secondary);
 }
+
+.error {
+  text-align: center;
+}

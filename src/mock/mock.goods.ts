@@ -1,4 +1,4 @@
-import { TGoodsItems } from "../Types/goods.type";
+import { TGoodsItems } from "../Types/products.type";
 
 export const mockGoods: TGoodsItems[] = [
   {
