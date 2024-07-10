@@ -1,23 +1,30 @@
 import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 
+import { useInCart } from "../../../hooks/useInCart.hooks";
+import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 import { AddedControl } from "../AddedControl/AddedControl";
 
-import styles from "./Card.module.css";
-
-import cardImage from "../../../mock/image.jpg";
 import { TProductFull } from "../../../Types/products.type";
 
-const Card = (item: TProductFull) => {
-  const { id, title, price } = item;
+import styles from "./Card.module.css";
 
-  const quantity = 0
+const Card = (item: TProductFull) => {
+  const { id, title, price, thumbnail, discountPercentage } = item;
+
+  const { inCart, quantityInCart } = useInCart(id);
+
+  const priceWithDiscount = roundedNum(
+    price * ((100 - discountPercentage) / 100),
+    2
+  );
 
   const navigate = useNavigate();
 
   const handleShowProduct = () => {
-    navigate(`/product/${id}`, { state: item });
+    navigate(`/product/${id}`);
   };
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -33,17 +40,17 @@ const Card = (item: TProductFull) => {
           tabIndex={0}
           aria-label="Preview of the product card. When you click, you go to the product page."
         >
-          <img src={cardImage} className={styles.image} alt="Product photo" />
+          <img src={thumbnail} className={styles.image} alt="Product photo" />
         </picture>
         <div className={styles.content}>
           <div className={styles.info}>
             <h3 className={styles.name}>{title}</h3>
-            <p className={styles.price}>{price}</p>
+            <p className={styles.price}>{priceWithDiscount}</p>
           </div>
-          {!quantity && (
+          {!inCart && (
             <AddedButton location="AddButton" handler={handleAddToCart} />
           )}
-          {quantity && <AddedControl quantity={quantity} />}
+          {inCart && <AddedControl quantity={quantityInCart} />}
         </div>
       </article>
     </li>

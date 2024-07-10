@@ -4,6 +4,7 @@ import {
   TGetProductsRequest,
   TGetSearchProductsResponse,
 } from "../../Types/api.types";
+import { TProductFull } from "../../Types/products.type";
 
 export const productsApi = instantsApi.injectEndpoints({
   endpoints: (builder) => ({
@@ -13,6 +14,15 @@ export const productsApi = instantsApi.injectEndpoints({
     >({
       query: (reqParams) => ({
         url: `/products/search?q=${reqParams.q}&limit=${reqParams.limit}&skip=${reqParams.skip}`,
+        method: "GET",
+      }),
+    }),
+    getSingleProduct: builder.query<
+      TProductFull,
+      string
+    >({
+      query: (productId) => ({
+        url: `/products/${productId}`,
         method: "GET",
       }),
     }),

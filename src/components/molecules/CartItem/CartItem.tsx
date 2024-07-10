@@ -5,19 +5,24 @@ import clsx from "clsx";
 import { AddedControl } from "../AddedControl/AddedControl";
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 
-import { TCartItem } from "../../../Types/cart.type";
-
 import styles from "./CartItem.module.css";
 
-import cardImage from "../../../mock/main photo.jpg";
+import { TCartProduct } from "../../../Types/cart.type";
+import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
 
-const CartItem = ({ item, quantity }: Required<TCartItem>) => {
-  const { id, name, price } = item;
+type Props = {
+  product: TCartProduct
+}
+
+const CartItem = ({ product }: Props) => {
+  const { id, thumbnail, title, price, quantity, discountPercentage } = product;
+  
+  const priceWithDiscount = roundedNum(price * ((100 - discountPercentage) / 100), 2);
 
   const navigate = useNavigate();
 
   const handleShowProduct = () => {
-    navigate(`/product/${id}`, { state: item });
+    navigate(`/product/${id}`);
   };
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -39,7 +44,7 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
           })}
         >
           <picture className={styles.wrapper__image}>
-            <img src={cardImage} className={styles.image} alt="product photo" />
+            <img src={thumbnail} className={styles.image} alt="product photo" />
           </picture>
           <div className={styles.content}>
             <h3
@@ -48,10 +53,10 @@ const CartItem = ({ item, quantity }: Required<TCartItem>) => {
               tabIndex={0}
               aria-label="When you click, you go to the product page."
             >
-              {name}
+              {title}
             </h3>
             <p className={styles.item__price}>
-              {price}
+              {priceWithDiscount}
               <span className={styles.item__price_currency}>&#36;</span>
             </p>
           </div>
