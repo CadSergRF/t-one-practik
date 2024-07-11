@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
 import { productsApi } from "../../../store/api/products.api";
 import styles from "./SearchInput.module.css";
@@ -9,6 +9,12 @@ const SearchInput = () => {
 
   const searchQuery = useAppSelector((state) => state.productView.searchQuery)
   const dispatch = useAppDispatch();
+// управляемый инпут
+// нужен для сохранения в рендере поискового запроса
+// иначе при навигации на карточку товара и последующей навигации назад(через кнопку браузера)
+// запрос остается в слайсе и фильтр товаров сохраняется (считаю именно такой подход верным)
+// но запрос не отображался в строке поиска
+  const [searchValue, setSearchValue] = useState(searchQuery);
 
   const { data } = productsApi.useGetSearchProductsQuery({
     q: searchQuery,
@@ -22,18 +28,23 @@ const SearchInput = () => {
     }
   }, [data, dispatch]);
 
+  const debouncedHandleSearch = useCallback(debounce((value) => {
+    dispatch(refreshSearchQuery(value))
+  }, 500), []);
+
   const handleChange = (evt: React.ChangeEvent<HTMLInputElement>) => {
-    dispatch(refreshSearchQuery(evt.target.value))
+    setSearchValue(evt.target.value)
+    debouncedHandleSearch(evt.target.value)
   };
 
-  const debouncedHandleSearch = debounce(handleChange, 500);
 
   return (
     <input
       type="search"
+      value={searchValue}
       className={styles.search__input}
       placeholder="Search by title"
-      onChange={(evt) => debouncedHandleSearch(evt)}
+      onChange={handleChange}
     />
   );
 };
