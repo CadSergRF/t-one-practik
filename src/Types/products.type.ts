@@ -1,3 +1,12 @@
+export type TCardProduct = {
+  id: number;
+  title: string;
+  price: number;
+  quantity?: number;
+  discountPercentage: number;
+  thumbnail: string;
+};
+
 type TProductReviews = {
   rating: number;
   comment: string;

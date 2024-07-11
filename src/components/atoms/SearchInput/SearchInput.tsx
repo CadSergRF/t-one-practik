@@ -1,9 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
-import { productsApi } from "../../../store/api/products.api";
-import styles from "./SearchInput.module.css";
-import { refreshSearchQuery, refreshState } from "../../../store/reducers/product.slice";
 import { debounce } from "lodash";
+
+import { productsApi } from "../../../store/api/products.api";
+import { refreshSearchQuery, refreshState } from "../../../store/reducers/product.slice";
+
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+
+import styles from "./SearchInput.module.css";
 
 const SearchInput = () => {
 

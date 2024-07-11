@@ -9,9 +9,17 @@ import { AddedControl } from "../AddedControl/AddedControl";
 
 import { TProductFull } from "../../../Types/products.type";
 
-import styles from "./Card.module.css";
+import styles from "./CatalogItem.module.css";
+import clsx from "clsx";
 
-const Card = (item: TProductFull) => {
+type Props = {
+  item: TProductFull;
+  small?: boolean;
+  sbCart?: boolean;
+  sbQuantity: number;
+}
+
+const CatalogItem = ({item, small = false, sbCart = false, sbQuantity = 5}: Props) => {
   const { id, title, price, thumbnail, discountPercentage } = item;
 
   const { inCart, quantityInCart } = useInCart(id);
@@ -33,28 +41,35 @@ const Card = (item: TProductFull) => {
   };
 
   return (
-    <li className={styles.wrapper}>
+    <li className={clsx(styles.wrapper, {
+      [styles.sb__wrapper]: small,
+    })}>
       <article className={styles.container} onClick={handleShowProduct}>
         <picture
-          className={styles.wrapper__image}
+          className={clsx(styles.wrapper__image, {
+            [styles.sb__wrapper__image]: small,
+          })}
           tabIndex={0}
           aria-label="Preview of the product card. When you click, you go to the product page."
         >
           <img src={thumbnail} className={styles.image} alt="Product photo" />
         </picture>
-        <div className={styles.content}>
+        <div className={clsx(styles.content, {
+      [styles.sb__content]: small,
+    })}>
           <div className={styles.info}>
             <h3 className={styles.name}>{title}</h3>
             <p className={styles.price}>{priceWithDiscount}</p>
           </div>
-          {!inCart && (
+          {!inCart && !sbCart && (
             <AddedButton location="AddButton" handler={handleAddToCart} />
           )}
           {inCart && <AddedControl quantity={quantityInCart} />}
+          {sbCart && <AddedControl quantity={sbQuantity} />}
         </div>
       </article>
     </li>
   );
 };
 
-export { Card };
+export { CatalogItem };

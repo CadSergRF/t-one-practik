@@ -22,3 +22,21 @@
   align-items: center;
   justify-content: center;
 }
+
+/* for storybook  */
+.sb__wrapper {
+  display: grid;
+  grid-template-columns: max-content max-content;
+  gap: 20px;
+}
+
+.sb__bgc {
+  padding: 20px;
+  color: var(--text-primary);
+  background-color: var(--background-color-secondary);
+}
+
+.sb__mp {
+  margin: 0;
+  padding: 0;
+}

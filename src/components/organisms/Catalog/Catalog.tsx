@@ -22,7 +22,7 @@ const Catalog = () => {
     limit: limit,
     skip: products.length,
   });
-
+console.log(products)
   const handleShowMore = () => {
     if (data) {
       dispatch(addCards(data));

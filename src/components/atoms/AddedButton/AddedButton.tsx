@@ -8,11 +8,14 @@ import { PlusSVGIcon } from "../Icons/PlusSVGIcon";
 import styles from "./AddedButton.module.css";
 
 type Props = {
+  id?: string;
+  disabled?: boolean;
+  hover?: boolean;
   location: "AddButton" | "MinusButton" | "PlusButton";
   handler: (evt: MouseEvent<HTMLButtonElement>) => void;
 };
 
-const AddedButton = ({ location, handler }: Props) => {
+const AddedButton = ({ location, handler, disabled = false, hover = false }: Props) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -31,9 +34,12 @@ const AddedButton = ({ location, handler }: Props) => {
 
   return (
     <button
-      className={styles.button}
+      className={clsx(styles.button, {
+        [styles.btn__hover]: hover,
+      })}
       onClick={handleClick}
       ref={buttonRef}
+      disabled={disabled}
       aria-label={ariaText}
     >
       <div
