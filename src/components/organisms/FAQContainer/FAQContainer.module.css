@@ -1,25 +1,26 @@
 .wrapper {
   padding: 60px 30px;
+
   background-color: var(--background-color-secondary);
 }
 
 .container {
   width: 880px;
+
   margin: 0 auto;
 }
 
 .title {
-  margin: 0;
   padding-bottom: 20px;
+
   font: 700 36px/56px "Jost";
   color: var(--text-primary);
   text-align: left;
 }
 
 .list {
-  margin: 0;
-  padding: 0;
   list-style-type: none;
+
   text-align: left;
 }
 

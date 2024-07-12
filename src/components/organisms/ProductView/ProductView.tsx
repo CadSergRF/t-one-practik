@@ -1,14 +1,17 @@
 import { MouseEvent } from "react";
+import { Helmet } from "react-helmet-async";
+
+import { useInCart } from "../../../hooks/useInCart.hooks";
+import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
+import { Gallery } from "../Gallery/Gallery";
+import { Rating } from "../../molecules/Rating/Rating";
+import { ButtonLF } from "../../atoms/ButtonLF/ButtonLF";
+import { AddedControl } from "../../molecules/AddedControl/AddedControl";
+
 import { TProductFull } from "../../../Types/products.type";
 
 import styles from "./ProductView.module.css";
-import { Helmet } from "react-helmet-async";
-import Gallery from "../Gallery/Gallery";
-import { ButtonLF } from "../../atoms/ButtonLF/ButtonLF";
-import { useInCart } from "../../../hooks/useInCart.hooks";
-import { AddedControl } from "../../molecules/AddedControl/AddedControl";
-import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
-import { Rating } from "../../molecules/Rating/Rating";
 
 const ProductView = (data: TProductFull) => {
   const {
@@ -49,7 +52,7 @@ const ProductView = (data: TProductFull) => {
           <div>
             <h1 className={styles.title}>{title}</h1>
             <div className={styles.info__meta}>
-              <Rating rating={rating}/>
+              <Rating rating={rating} />
               <h3 className={styles.category}>{tags.join(", ")}</h3>
             </div>
           </div>

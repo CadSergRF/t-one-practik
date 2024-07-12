@@ -2,15 +2,15 @@ import { FormEvent } from "react";
 
 import { CartItem } from "../../molecules/CartItem/CartItem";
 
-import styles from "./CartItemsView.module.css";
-
 import { TCartProduct } from "../../../Types/cart.type";
 
-type Props = {
-  products: TCartProduct[]
-}
+import styles from "./CartItemsView.module.css";
 
-const CartItemsView = ({products}: Props) => {
+type Props = {
+  products: TCartProduct[];
+};
+
+const CartItemsView = ({ products }: Props) => {
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
   };

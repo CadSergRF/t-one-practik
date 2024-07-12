@@ -1,8 +1,9 @@
 import clsx from "clsx";
+
 import { ButtonLF } from "../../atoms/ButtonLF/ButtonLF";
 
 import styles from "./Hero.module.css";
-import commonStyle from '../../../assets/styles/common.module.css';
+import commonStyle from "../../../assets/styles/common.module.css";
 
 const Hero = () => {
   return (
@@ -17,7 +18,7 @@ const Hero = () => {
             We sell smartphones, laptops, clothes, shoes and many other products
             at low prices
           </p>
-          <ButtonLF text="Get to shopping" actionTo='#catalog'/>
+          <ButtonLF text="Get to shopping" actionTo="#catalog" />
         </article>
       </div>
     </section>

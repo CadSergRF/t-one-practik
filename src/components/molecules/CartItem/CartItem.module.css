@@ -1,6 +1,8 @@
 .wrapper {
   padding: 12px;
+
   border-radius: 4px;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -15,6 +17,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
+
   will-change: opacity;
 }
 
@@ -23,15 +26,18 @@
 }
 
 .wrapper__image {
-  display: inline-block;
   width: 100px;
   height: 100px;
+
+  display: inline-block;
 }
 
 .image {
   width: 100%;
   height: 100%;
+
   border-radius: 4px;
+
   -o-object-fit: cover;
   object-fit: cover;
 }
@@ -41,13 +47,14 @@
 }
 
 .item__title {
-  margin: 0;
   font: 600 16px/22px "Jost";
   color: var(--text-product-name);
   text-align: left;
+
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
   cursor: pointer;
 }
 
@@ -56,7 +63,6 @@
 }
 
 .item__price {
-  margin: 0;
   font: 400 18px/26px "Jost";
   color: var(--text-product-name);
   text-align: left;
@@ -68,15 +74,17 @@
 
 .controls {
   padding-right: 13px;
+
   display: flex;
   align-items: center;
   gap: 48px;
 }
 
 .delete__button {
-  padding: 0;
   border: none;
+
   background-color: transparent;
+
   font: 400 14px/20px "Jost";
   color: var(--text-placeholder);
 }
@@ -84,18 +92,22 @@
 .delete__button:hover {
   color: var(--text-secondary);
   text-decoration: underline;
+
   cursor: pointer;
 }
 
 .button {
   width: 50px;
   height: 50px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+
   border: none;
   border-radius: 4px;
   background-color: var(--button-primary);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   cursor: pointer;
 }
 

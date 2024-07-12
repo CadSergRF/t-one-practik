@@ -30,10 +30,10 @@ export const Primary: Story = {
 export const Ratings = () => (
   <div className={clsx(styles.sb__wrapper, styles.sb__bgc)}>
     <Rating rating={0} />
-    <p className={styles.sb__mp}>Don't even think about it</p>
+    <p>Don't even think about it</p>
     <Rating rating={3} />
-    <p className={styles.sb__mp}>Not bad</p>
+    <p>Not bad</p>
     <Rating rating={5} />
-    <p className={styles.sb__mp}>WoW</p>
+    <p>WoW</p>
   </div>
 );

@@ -9,7 +9,6 @@ type Props = {
 };
 
 const ButtonLF = ({ text, actionTo }: Props) => {
-  
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -30,8 +29,6 @@ const ButtonLF = ({ text, actionTo }: Props) => {
       </button>
     );
   }
-
-  return <div>ButtonLF</div>;
 };
 
 export { ButtonLF };

@@ -1,5 +1,6 @@
 .total {
   width: 356px;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -9,16 +10,17 @@
   display: flex;
   justify-content: space-between;
   gap: 15px;
+
   text-align: left;
 }
 
 .total__item_style {
   padding-bottom: 20px;
+
   border-bottom: 1px solid var(--border);
 }
 
 .total__count {
-  margin: 0;
   font: 400 20px/30px "Jost";
   color: var(--text-cart-total);
 }
@@ -28,7 +30,6 @@
 }
 
 .total__brutto {
-  margin: 0;
   font: 600 20px/30px "Jost";
   color: var(--text-cart-total);
 }
@@ -39,7 +40,6 @@
 }
 
 .total__netto {
-  margin: 0;
   font: 600 24px/32px "Jost";
   color: var(--text-cart-total);
 }

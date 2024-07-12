@@ -1,17 +1,18 @@
 .form {
   min-width: 775px;
-  padding: 0;
 }
 
 .form__list {
-  margin: 0;
   padding: 19px 38px;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
   list-style-type: none;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
 }
 
 @media screen and (max-width: 1250px) {

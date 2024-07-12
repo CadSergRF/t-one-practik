@@ -1,17 +1,18 @@
 .wrapper {
+  width: 1180px;
+
   margin: 48px auto;
   margin-bottom: 92px;
-  width: 1180px;
+
   display: flex;
   flex-direction: column;
   gap: 48px;
 }
 
 .cart__title {
-  margin: 0;
   font: 700 36px/56px "Jost";
-  text-align: left;
   color: var(--text-secondary);
+  text-align: left;
 }
 
 .container {
@@ -22,18 +23,19 @@
 
 .form {
   min-width: 775px;
-  padding: 0;
 }
 
 .form__list {
-  margin: 0;
   padding: 19px 38px;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
   list-style-type: none;
+
   display: flex;
   flex-direction: column;
   gap: 10px;
-  border: 1px solid var(--border);
-  border-radius: 4px;
 }
 
 @media screen and (max-width: 1250px) {

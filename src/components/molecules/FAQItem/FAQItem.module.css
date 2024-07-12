@@ -4,9 +4,11 @@
 
 .wrapper__question {
   padding: 25px 0;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   cursor: pointer;
 }
 
@@ -18,9 +20,10 @@
 .plus {
   width: 25px;
   height: 25px;
+
   -o-object-fit: cover;
   object-fit: cover;
-  margin: 0;
+
   will-change: transform;
   transition: transform 0.3s ease-in-out;
 }
@@ -32,18 +35,23 @@
 .answer_wrapper {
   display: grid;
   grid-template-rows: 0fr;
+
   transition: grid-template-rows 0.5s ease-out;
-  transition: grid-template-rows 0.5s ease-out, -ms-grid-rows 0.5s ease-out;
+
+  transition:
+    grid-template-rows 0.5s ease-out,
+    -ms-grid-rows 0.5s ease-out;
 }
 
 .answer_open {
   padding-bottom: 18px;
+
   grid-template-rows: 1fr;
 }
 
 .answer {
-  margin: 0;
   overflow: hidden;
+
   font: 600 16px/26px "Jost";
   color: var(--text-primary);
 }

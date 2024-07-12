@@ -20,6 +20,7 @@ const AddedControl = ({ quantity }: Props) => {
     evt.stopPropagation();
     console.log("The quantity of the product has been increased by 1");
   };
+
   return (
     <div className={styles.group__quantity}>
       <AddedButton location="MinusButton" handler={handleMinusQuantity} />

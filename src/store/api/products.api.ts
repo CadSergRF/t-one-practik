@@ -17,10 +17,7 @@ export const productsApi = instantsApi.injectEndpoints({
         method: "GET",
       }),
     }),
-    getSingleProduct: builder.query<
-      TProductFull,
-      string
-    >({
+    getSingleProduct: builder.query<TProductFull, string>({
       query: (productId) => ({
         url: `/products/${productId}`,
         method: "GET",

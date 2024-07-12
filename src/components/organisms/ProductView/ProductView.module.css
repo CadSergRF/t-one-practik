@@ -1,7 +1,9 @@
 .wrapper {
   width: 1180px;
+
   margin: 48px auto;
   margin-bottom: 155px;
+
   display: grid;
   grid-template-columns: 520px auto;
   gap: 40px;
@@ -14,8 +16,8 @@
 }
 
 .title {
-  margin: 0;
   margin-bottom: 18px;
+
   font: 600 36px/56px "Jost";
   color: var(--text-product-name);
   text-align: left;
@@ -27,28 +29,26 @@
 }
 
 .category {
-  margin: 0;
-  padding: 0;
   font: 400 16px/24px "Jost";
   color: var(--text-category);
 }
 
 .stock {
-  margin: 0;
   padding: 10px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
   font: 500 18px/24px "Jost";
   color: var(--text-rek);
   text-align: left;
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
 }
 
 .description {
-  margin: 0;
-  padding: 0;
   font: 400 18px/30px "Jost";
   color: var(--text-secondary);
   text-align: left;
+
   display: -webkit-box;
   line-clamp: 3;
   -webkit-line-clamp: 3;
@@ -63,8 +63,6 @@
 }
 
 .other__text {
-  margin: 0;
-  padding: 0;
   font: 400 16px/24px "Jost";
   color: var(--text-category);
   text-align: left;
@@ -72,10 +70,13 @@
 
 .buy {
   padding: 12px;
+
+  border-radius: 6px;
+
+  background-color: var(--background-color-buy);
+
   display: flex;
   justify-content: space-between;
-  border-radius: 6px;
-  background-color: var(--background-color-buy);
 }
 
 .prices__wrapper {
@@ -85,19 +86,18 @@
 
 .prices {
   padding: 0 26px 0 20px;
+
   border-right: 1px solid var(--border);
 }
 
 .price {
-  margin: 0;
   font: 600 36px/40px "Jost";
   color: var(--text-product-price);
 }
 
 .price__old {
-  margin: 0;
   margin-top: 4px;
-  padding: 0;
+
   font: 500 16px/20px "Jost";
   color: var(--text-category);
   text-align: left;
@@ -105,14 +105,15 @@
 }
 
 .prices__text {
-  margin: 0;
   padding: 0 20px 0 24px;
+
   font: 400 16px/24px "Jost";
   color: var(--text-product-price);
 }
 
 .prices__text_discount {
   padding-left: 8px;
+
   font-weight: 600;
 }
 

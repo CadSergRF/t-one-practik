@@ -2,22 +2,26 @@ import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 
+import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
 import { AddedControl } from "../AddedControl/AddedControl";
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 
+import { TCartProduct } from "../../../Types/cart.type";
+
 import styles from "./CartItem.module.css";
 
-import { TCartProduct } from "../../../Types/cart.type";
-import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
-
 type Props = {
-  product: TCartProduct
-}
+  product: TCartProduct;
+};
 
 const CartItem = ({ product }: Props) => {
   const { id, thumbnail, title, price, quantity, discountPercentage } = product;
-  
-  const priceWithDiscount = roundedNum(price * ((100 - discountPercentage) / 100), 2);
+
+  const priceWithDiscount = roundedNum(
+    price * ((100 - discountPercentage) / 100),
+    2
+  );
 
   const navigate = useNavigate();
 

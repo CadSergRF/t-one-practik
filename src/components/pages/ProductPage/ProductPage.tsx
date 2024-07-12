@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 
-import { ErrorPage } from "../ErrorPage/ErrorPage";
-
 import { productsApi } from "../../../store/api/products.api";
-import { Preloader } from "../../atoms/PreLoader/PreLoader";
+
 import { ProductView } from "../../organisms/ProductView/ProductView";
+import { Preloader } from "../../atoms/PreLoader/PreLoader";
+import { ErrorPage } from "../ErrorPage/ErrorPage";
 
 const ProductPage = () => {
   useEffect(() => {
@@ -24,9 +24,7 @@ const ProductPage = () => {
   if (error || !data) return <ErrorPage />;
 
   // ошибок нет и все пришло
-  return (
-    <ProductView {...data}/>
-  );
+  return <ProductView {...data} />;
 };
 
 export { ProductPage };

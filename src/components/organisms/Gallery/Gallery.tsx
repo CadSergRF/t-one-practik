@@ -1,5 +1,4 @@
-import { useState } from "react";
-import { MouseEvent } from "react";
+import { MouseEvent, useState } from "react";
 
 import styles from "./Gallery.module.css";
 
@@ -41,4 +40,4 @@ const Gallery = ({ images }: Props) => {
   );
 };
 
-export default Gallery;
+export { Gallery };

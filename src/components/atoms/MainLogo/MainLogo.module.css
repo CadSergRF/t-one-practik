@@ -1,6 +1,7 @@
 .logo {
-  font: 700 30px/44px "Jost", sans-serif;
   text-decoration: none;
+  
+  font: 700 30px/44px "Jost", sans-serif;
   color: var(--text-primary);
 }
 

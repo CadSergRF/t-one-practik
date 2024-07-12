@@ -14,12 +14,18 @@ import clsx from "clsx";
 
 type Props = {
   item: TProductFull;
-  small?: boolean;
-  sbCart?: boolean;
-  sbQuantity: number;
-}
+  // свойства добавлены для имитации поведения компонента в Storybook
+  sbSmall?: boolean; // имитация размера компонента
+  sbCart?: boolean; // имитация наличия товара в корзине
+  sbQuantity?: number;
+};
 
-const CatalogItem = ({item, small = false, sbCart = false, sbQuantity = 5}: Props) => {
+const CatalogItem = ({
+  item,
+  sbSmall = false,
+  sbCart = false,
+  sbQuantity = 5,
+}: Props) => {
   const { id, title, price, thumbnail, discountPercentage } = item;
 
   const { inCart, quantityInCart } = useInCart(id);
@@ -41,22 +47,26 @@ const CatalogItem = ({item, small = false, sbCart = false, sbQuantity = 5}: Prop
   };
 
   return (
-    <li className={clsx(styles.wrapper, {
-      [styles.sb__wrapper]: small,
-    })}>
+    <li
+      className={clsx(styles.wrapper, {
+        [styles.sb__wrapper]: sbSmall,
+      })}
+    >
       <article className={styles.container} onClick={handleShowProduct}>
         <picture
           className={clsx(styles.wrapper__image, {
-            [styles.sb__wrapper__image]: small,
+            [styles.sb__wrapper__image]: sbSmall,
           })}
           tabIndex={0}
           aria-label="Preview of the product card. When you click, you go to the product page."
         >
           <img src={thumbnail} className={styles.image} alt="Product photo" />
         </picture>
-        <div className={clsx(styles.content, {
-      [styles.sb__content]: small,
-    })}>
+        <div
+          className={clsx(styles.content, {
+            [styles.sb__content]: sbSmall,
+          })}
+        >
           <div className={styles.info}>
             <h3 className={styles.name}>{title}</h3>
             <p className={styles.price}>{priceWithDiscount}</p>

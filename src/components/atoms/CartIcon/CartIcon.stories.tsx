@@ -1,7 +1,9 @@
-import clsx from "clsx";
-import { CartIcon } from "./CartIcon";
-import styles from "./CartIcon.module.css";
 import { Meta, StoryObj } from "@storybook/react";
+import clsx from "clsx";
+
+import { CartIcon } from "./CartIcon";
+
+import styles from "./CartIcon.module.css";
 
 const meta = {
   component: CartIcon,

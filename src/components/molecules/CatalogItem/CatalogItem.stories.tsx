@@ -20,7 +20,7 @@ type Story = StoryObj<typeof CatalogItem>;
 
 export const Primary: Story = {
   args: {
-    small: false,
+    sbSmall: false,
     sbCart: false,
     sbQuantity: 3,
     item: cardStories,
