@@ -1,7 +1,12 @@
+import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
 
 import { productsApi } from "../../../store/api/products.api";
 import { addCards } from "../../../store/reducers/product.slice";
+import {
+  refreshSearchSkipState,
+  refreshSearchTotalState,
+} from "../../../store/reducers/search.slice";
 
 import { SearchInput } from "../../atoms/SearchInput/SearchInput";
 import { CardsList } from "../CardsList/CardsList";
@@ -12,21 +17,31 @@ import styles from "./Catalog.module.css";
 import commonStyle from "../../../assets/styles/common.module.css";
 
 const Catalog = () => {
-  const { products, total, limit, searchQuery } = useAppSelector(
-    (state) => state.productView
+  const { products } = useAppSelector((state) => state.productView);
+  const { total, limit, searchQuery, skip } = useAppSelector(
+    (state) => state.searchStore
   );
+
   const dispatch = useAppDispatch();
 
   const { data, error, isLoading } = productsApi.useGetSearchProductsQuery({
     q: searchQuery,
     limit: limit,
-    skip: products.length,
+    skip: skip,
   });
 
-  const handleShowMore = () => {
-    if (data) {
+  useEffect(() => {
+    // 1. если есть data, то есть что добавлять в стейт
+    // 2. условие для добавления НОВЫХ карточек
+    // без 2 при навигации по приложению всегда будет добавляться data из последнего запроса
+    if (data && (products.length - skip === 0)) {
       dispatch(addCards(data));
+      dispatch(refreshSearchTotalState(data.total));
     }
+  }, [data, dispatch]);
+
+  const handleShowMore = () => {
+    dispatch(refreshSearchSkipState(products.length));
   };
 
   return (
