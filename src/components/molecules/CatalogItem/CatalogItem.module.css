@@ -67,8 +67,6 @@
 }
 
 .content {
-  margin-top: 3px;
-
   display: flex;
   justify-content: space-between;
   gap: 10px;

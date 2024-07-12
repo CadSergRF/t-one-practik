@@ -172,6 +172,10 @@
     justify-content: center;
     gap: 15px;
   }
+
+  .prices__wrapper {
+    flex-wrap: wrap;
+  }
 }
 
 @media screen and (max-width: 720px) {

@@ -22,7 +22,6 @@ const ProductPage = () => {
   if (isLoading) return <Preloader />;
   // ошибка или не пришли данные
   if (error || !data) return <ErrorPage />;
-
   // ошибок нет и все пришло
   return <ProductView {...data} />;
 };

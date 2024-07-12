@@ -16,12 +16,15 @@
 }
 
 .back__text {
-  padding-bottom: 78px;
+  width: 100%;
+
+  padding-bottom: 75px;
 
   font-weight: 700;
-  font-size: calc(48px + 152 * ((100vw - 320px) / 1440));
-  line-height: calc(72px + 228 * ((100vw - 320px) / 1440));
+  font-size: calc(37px + 152 * (100vw / 1440));
+  line-height: calc(72px + 228 * (100vw / 1440));
   font-family: "Jost";
+  text-align: center;
   color: var(--text-back);
 }
 
@@ -65,6 +68,16 @@
   }
 }
 
+@media screen and (max-width: 800px) {
+  .back__text {
+    font-size: calc(48px + 152 * ((100vw - 320px) / (1440 - 320)));
+    line-height: calc(72px + 228 * ((100vw - 320px) / (1440 - 320)));
+    font-family: "Jost";
+    text-align: right;
+    color: var(--text-back);
+  }
+}
+
 @media screen and (max-width: 650px) {
   .wrapper {
     height: 250px;
@@ -84,14 +97,9 @@
     font-size: 12px;
     line-height: 18px;
   }
-
+  
   .back__text {
     padding-bottom: 0;
-
-    font-size: calc(48px + 152 * ((100vw - 320px) / (1440 - 320)));
-    line-height: calc(72px + 228 * ((100vw - 320px) / (1440 - 320)));
-    font-family: "Jost";
-    color: var(--text-back);
   }
 }
 
