@@ -4,10 +4,12 @@ import productSlice from "./reducers/product.slice";
 import cartSlice from "./reducers/cart.slice";
 import searchSlice from "./reducers/search.slice";
 import { instantsApi } from "./api/instants.api";
+import { userSlice } from "./reducers/user.slice";
 
 const rootReducer = combineReducers({
   productView: productSlice,
   cartStore: cartSlice,
+  userStore: userSlice,
   searchStore: searchSlice,
   [instantsApi.reducerPath]: instantsApi.reducer,
 });
