@@ -1,0 +1,125 @@
+.form {
+  width: 600px;
+
+  padding: 60px;
+
+  border: 1px solid var(--border);
+  border-radius: 4px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+.input__wrapper {
+  width: 100%;
+
+  position: relative;
+}
+
+.input {
+  width: 100%;
+
+  padding: 20px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: var(--background-color-input);
+
+  font: 400 16px/22px "Jost";
+}
+
+.input::-webkit-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.input::-moz-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.input:-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.input::-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.input::placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.input:active,
+.input:focus {
+  outline: none;
+}
+
+.error {
+  width: 100%;
+  position: absolute;
+  left: 20px;
+  bottom: -20px;
+
+  font: 400 12px/18px "Jost";
+  color: var(--text-error);
+}
+
+.error_btn {
+  width: fit-content;
+  left: 0;
+  bottom: -30px;
+  font: 400 16px/24px "Jost";
+}
+
+.btn__submit {
+  position: relative;
+
+  padding: 20px 50px;
+
+  outline: none;
+  border: none;
+  border-radius: 4px;
+
+  background-color: var(--button-primary);
+
+  font: 400 16px/22px "Jost";
+  color: var(--text-primary);
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.btn__submit:hover {
+  background-color: var(--button-hover);
+}
+
+.btn__submit:focus {
+  outline: 2px solid var(--button-hover);
+}
+
+.btn__submit:disabled {
+  background-color: var(--button-disabled);
+}
+
+@media screen and (max-width: 660px) {
+  .btn__submit {
+    padding: 10px 20px;
+
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .btn__submit {
+    padding: 10px 20px;
+
+    font-size: 12px;
+  }
+}
