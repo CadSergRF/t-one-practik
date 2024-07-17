@@ -1,3 +1,6 @@
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+import { fetchCartByUserId } from "../../../store/reducers/cart.slice";
 import { CartIcon } from "../../atoms/CartIcon/CartIcon";
 import { NavigationLink } from "../../atoms/NavigationLink/NavigationLink";
 
@@ -5,22 +8,31 @@ import styles from './NavigationMenu.module.css';
 
 type Props = {
   location: "Header" | "Footer";
-  loggedIn?: boolean;
-  counter?: number;
 };
 
-const NavigationMenu = ({ location, loggedIn, counter = 0 }: Props) => {
+const NavigationMenu = ({ location }: Props) => {
+const {isLoggedIn, userData} = useAppSelector((state) => state.userStore)
+
+const dispatch = useAppDispatch();
+useEffect(() => {
+  if (userData?.id) {
+    dispatch(fetchCartByUserId(userData.id))
+  }
+}, [dispatch, userData.id])
+
+const counter = useAppSelector((state) => state.cartStore.cart.products.length)
+
   return (
     <nav className={styles.wrapper} aria-label="Basic site navigation">
       <ul className={styles.menu}>
         <NavigationLink text="Catalog" link="/#catalog" />
         <NavigationLink text="FAQ" link="/#faq" />
-        {location === "Header" && loggedIn === true && (
+        {location === "Header" && isLoggedIn && (
           <>
             <NavigationLink text="Cart" link="/cart">
               <CartIcon counter={counter} />
             </NavigationLink>
-            <NavigationLink text="Johnson Smith" link="" />
+            <NavigationLink text={`${userData.lastName} ${userData.firstName}`} link="" />
           </>
         )}
       </ul>
