@@ -21,7 +21,10 @@ export const loginApi = instantsApi.injectEndpoints({
       query: (token) => ({
         url: '/auth/me',
         method: "GET",
-        headers: {Authorization: `Bearer ${token}`}
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
       }),
     }),
   }),

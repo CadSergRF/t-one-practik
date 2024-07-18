@@ -25,3 +25,11 @@ export type TCarts = {
   skip: number;
   limit: number;
 };
+
+export type TChangeCart = {
+  changeMethod: "AddToCart" | "ChangeQuantity";
+  newData: {
+    id: number;
+    quantity: number;
+  };
+};

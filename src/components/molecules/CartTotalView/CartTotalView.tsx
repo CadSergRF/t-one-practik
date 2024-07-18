@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 import styles from "./CartTotalView.module.css";
+import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
 
 type Props = {
   totalProducts: number;
@@ -22,13 +23,13 @@ const CartTotalView = ({ totalProducts, discountedTotal, total }: Props) => {
       <div className={clsx(styles.total__item, styles.total__item_style)}>
         <p className={styles.total__brutto}>Price without discount</p>
         <p className={clsx(styles.total__brutto, styles.total__brutto_value)}>
-          {total}&#36;
+          {roundedNum(total, 2)}&#36;
         </p>
       </div>
       <div className={styles.total__item}>
         <p className={styles.total__netto}>Total price</p>
         <p className={clsx(styles.total__netto, styles.total__netto_value)}>
-          {discountedTotal}&#36;
+          {roundedNum(discountedTotal, 2)}&#36;
         </p>
       </div>
     </div>

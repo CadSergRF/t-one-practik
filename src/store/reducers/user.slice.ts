@@ -48,7 +48,6 @@ export const userSlice = createSlice({
       .addMatcher(
         loginApi.endpoints.currentUser.matchFulfilled,
         (state, { payload }) => {
-          console.log("current", payload);
           state.userData.id = payload.id;
           state.userData.firstName = payload.firstName;
           state.userData.lastName = payload.lastName;
@@ -60,7 +59,7 @@ export const userSlice = createSlice({
         state.userData.firstName = "";
         state.userData.lastName = "";
         state.isLoggedIn = false;
-        localStorage.removeItem('token');
+        localStorage.removeItem("token");
       });
   },
 });
