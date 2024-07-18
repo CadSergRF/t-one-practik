@@ -1,8 +1,11 @@
 import { MouseEvent } from "react";
 import { Helmet } from "react-helmet-async";
 
+import { useAppDispatch } from "../../../hooks/redux.hooks";
 import { useInCart } from "../../../hooks/useInCart.hooks";
 import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 import { Gallery } from "../Gallery/Gallery";
 import { Rating } from "../../molecules/Rating/Rating";
@@ -12,8 +15,6 @@ import { AddedControl } from "../../molecules/AddedControl/AddedControl";
 import { TProductFull } from "../../../Types/products.type";
 
 import styles from "./ProductView.module.css";
-import { useAppDispatch } from "../../../hooks/redux.hooks";
-import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 const ProductView = (data: TProductFull) => {
   const {
@@ -40,7 +41,6 @@ const ProductView = (data: TProductFull) => {
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("The product has been added to the cart");
     dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
   };
   return (

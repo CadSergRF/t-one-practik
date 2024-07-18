@@ -2,9 +2,9 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import productSlice from "./reducers/product.slice";
 import cartSlice from "./reducers/cart.slice";
+import userSlice from "./reducers/user.slice";
 import searchSlice from "./reducers/search.slice";
 import { instantsApi } from "./api/instants.api";
-import userSlice from "./reducers/user.slice";
 
 const rootReducer = combineReducers({
   productView: productSlice,

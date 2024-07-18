@@ -15,7 +15,12 @@ type Props = {
   handler: (evt: MouseEvent<HTMLButtonElement>) => void;
 };
 
-const AddedButton = ({ location, handler, disabled = false, hover = false }: Props) => {
+const AddedButton = ({
+  location,
+  handler,
+  disabled = false,
+  hover = false,
+}: Props) => {
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {

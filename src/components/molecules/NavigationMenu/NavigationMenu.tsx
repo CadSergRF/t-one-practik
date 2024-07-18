@@ -1,6 +1,9 @@
 import { useEffect } from "react";
+
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+
 import { fetchCartByUserId } from "../../../store/reducers/cart.slice";
+
 import { CartIcon } from "../../atoms/CartIcon/CartIcon";
 import { NavigationLink } from "../../atoms/NavigationLink/NavigationLink";
 

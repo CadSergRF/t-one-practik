@@ -1,7 +1,8 @@
 import clsx from "clsx";
 
-import styles from "./CartTotalView.module.css";
 import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
+import styles from "./CartTotalView.module.css";
 
 type Props = {
   totalProducts: number;

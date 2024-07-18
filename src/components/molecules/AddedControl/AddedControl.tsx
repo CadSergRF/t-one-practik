@@ -1,10 +1,12 @@
 import { MouseEvent } from "react";
 
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
+
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 
 import styles from "./AddedControl.module.css";
-import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
-import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 type Props = {
   id: number;
@@ -20,7 +22,6 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
 
   const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("The quantity of the product has been reduced by 1");
     dispatch(
       fetchChangeCart({
         changeMethod: "ChangeQuantity",
@@ -31,7 +32,6 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
 
   const handlePlusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("The quantity of the product has been increased by 1");
     dispatch(
       fetchChangeCart({
         changeMethod: "ChangeQuantity",

@@ -1,5 +1,6 @@
-import { TLoginData, TUserData } from "../../Types/login.type";
 import { instantsApi } from "./instants.api";
+
+import { TLoginData, TUserData } from "../../Types/login.type";
 
 
 export const loginApi = instantsApi.injectEndpoints({

@@ -1,8 +1,12 @@
 import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
+import clsx from "clsx";
 
+import { useAppDispatch } from "../../../hooks/redux.hooks";
 import { useInCart } from "../../../hooks/useInCart.hooks";
 import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 import { AddedControl } from "../AddedControl/AddedControl";
@@ -10,9 +14,6 @@ import { AddedControl } from "../AddedControl/AddedControl";
 import { TProductFull } from "../../../Types/products.type";
 
 import styles from "./CatalogItem.module.css";
-import clsx from "clsx";
-import { useAppDispatch } from "../../../hooks/redux.hooks";
-import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 type Props = {
   item: TProductFull;
@@ -46,7 +47,6 @@ const dispatch = useAppDispatch();
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Товар добавлен в корзину");
     dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
   };
 

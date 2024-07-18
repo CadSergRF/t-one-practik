@@ -2,7 +2,10 @@ import { MouseEvent } from "react";
 import { useNavigate } from "react-router-dom";
 import clsx from "clsx";
 
+import { useAppDispatch } from "../../../hooks/redux.hooks";
 import { roundedNum } from "../../../utils/helpers/roundedNum.helper";
+
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 import { AddedControl } from "../AddedControl/AddedControl";
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
@@ -10,8 +13,6 @@ import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 import { TCartProduct } from "../../../Types/cart.type";
 
 import styles from "./CartItem.module.css";
-import { useAppDispatch } from "../../../hooks/redux.hooks";
-import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 type Props = {
   product: TCartProduct;
@@ -19,7 +20,7 @@ type Props = {
 
 const CartItem = ({ product }: Props) => {
   const { id, thumbnail, title, price, quantity, discountPercentage } = product;
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
 
   const priceWithDiscount = roundedNum(
     price * ((100 - discountPercentage) / 100),
@@ -34,14 +35,22 @@ const CartItem = ({ product }: Props) => {
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Товар добавлен в корзину");
-    dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
+    dispatch(
+      fetchChangeCart({
+        changeMethod: "AddToCart",
+        newData: { id: id, quantity: 1 },
+      })
+    );
   };
-  
+
   const handleDelete = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    console.log("Delete product");
-    dispatch(fetchChangeCart({changeMethod: "ChangeQuantity", newData: {id: id, quantity: 0}}))
+    dispatch(
+      fetchChangeCart({
+        changeMethod: "ChangeQuantity",
+        newData: { id: id, quantity: 0 },
+      })
+    );
   };
 
   return (
