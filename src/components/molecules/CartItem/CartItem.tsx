@@ -72,7 +72,7 @@ const CartItem = ({ product }: Props) => {
         </div>
         {quantity > 0 ? (
           <div className={styles.controls}>
-            <AddedControl quantity={quantity} />
+            <AddedControl id={id} quantity={quantity} />
             <button
               className={styles.delete__button}
               onClick={handleDelete}

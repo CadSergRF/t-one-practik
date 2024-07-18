@@ -12,6 +12,8 @@ import { AddedControl } from "../../molecules/AddedControl/AddedControl";
 import { TProductFull } from "../../../Types/products.type";
 
 import styles from "./ProductView.module.css";
+import { useAppDispatch } from "../../../hooks/redux.hooks";
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 const ProductView = (data: TProductFull) => {
   const {
@@ -28,6 +30,7 @@ const ProductView = (data: TProductFull) => {
     discountPercentage,
   } = data;
 
+  const dispatch = useAppDispatch()
   const { inCart, quantityInCart } = useInCart(id);
   const ariaText = "Product page - " + title;
   const priceWithDiscount = roundedNum(
@@ -38,6 +41,7 @@ const ProductView = (data: TProductFull) => {
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
     console.log("The product has been added to the cart");
+    dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
   };
   return (
     <>
@@ -75,10 +79,10 @@ const ProductView = (data: TProductFull) => {
                 </span>
               </p>
             </div>
-            {!inCart && (
+            {!inCart || !!(quantityInCart === 0) && (
               <ButtonLF text="Add to cart" actionTo={handleAddToCart} />
             )}
-            {inCart && <AddedControl quantity={quantityInCart} />}
+            {inCart && quantityInCart > 0 && <AddedControl id={id} quantity={quantityInCart} stock={stock} />}
           </section>
         </div>
       </section>

@@ -20,7 +20,7 @@ useEffect(() => {
   }
 }, [dispatch, userData.id])
 
-const counter = useAppSelector((state) => state.cartStore.cart.products.length)
+const counter = useAppSelector((state) => state.cartStore.cart.totalProducts)
 
   return (
     <nav className={styles.wrapper} aria-label="Basic site navigation">

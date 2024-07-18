@@ -11,6 +11,8 @@ import { TProductFull } from "../../../Types/products.type";
 
 import styles from "./CatalogItem.module.css";
 import clsx from "clsx";
+import { useAppDispatch } from "../../../hooks/redux.hooks";
+import { fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 type Props = {
   item: TProductFull;
@@ -26,7 +28,7 @@ const CatalogItem = ({
   sbCart = false,
   sbQuantity = 5,
 }: Props) => {
-  const { id, title, price, thumbnail, discountPercentage } = item;
+  const { id, title, price, thumbnail, discountPercentage, stock } = item;
 
   const { inCart, quantityInCart } = useInCart(id);
 
@@ -36,6 +38,7 @@ const CatalogItem = ({
   );
 
   const navigate = useNavigate();
+const dispatch = useAppDispatch();
 
   const handleShowProduct = () => {
     navigate(`/product/${id}`);
@@ -44,6 +47,7 @@ const CatalogItem = ({
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
     console.log("Товар добавлен в корзину");
+    dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
   };
 
   return (
@@ -71,11 +75,11 @@ const CatalogItem = ({
             <h3 className={styles.name}>{title}</h3>
             <p className={styles.price}>{priceWithDiscount}</p>
           </div>
-          {!inCart && !sbCart && (
+          {((!inCart && !sbCart) || (inCart && !!(quantityInCart === 0))) && (
             <AddedButton location="AddButton" handler={handleAddToCart} />
           )}
-          {inCart && <AddedControl quantity={quantityInCart} />}
-          {sbCart && <AddedControl quantity={sbQuantity} />}
+          {inCart && quantityInCart > 0 && <AddedControl id={id} quantity={quantityInCart} stock={stock} />}
+          {sbCart && <AddedControl id={id} quantity={sbQuantity} stock={stock} />}
         </div>
       </article>
     </li>

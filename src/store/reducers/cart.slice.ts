@@ -17,9 +17,9 @@ export const fetchCartByUserId = createAsyncThunk<
 >("userCart/fetchCartByUserId", async (userId: number, thunkApi) => {
   const response = await fetch(`${BASE_URL}/carts/user/${userId}`, {
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
-    }
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
+    },
   });
   if (response.status === 400) {
     return thunkApi.rejectWithValue((await response.json()) as MyKnownError);
@@ -30,38 +30,40 @@ export const fetchCartByUserId = createAsyncThunk<
 export const fetchChangeCart = createAsyncThunk<
   TCart,
   TChangeCart,
-  { rejectValue: MyKnownError, state: RootState }
+  { rejectValue: MyKnownError; state: RootState }
 >("userCart/fetchChangeCart", async (newArray: TChangeCart, thunkApi) => {
   const state = thunkApi.getState();
+
   const cartForChange = resChangeCartArray(state.cartStore.cart.products);
-  console.log(cartForChange)
-  if (newArray.changeMethod === 'AddToCart') {
-    cartForChange.push(newArray.newData) 
-  } else if (newArray.changeMethod === 'ChangeQuantity') {
+
+  if (newArray.changeMethod === "AddToCart") {
+    cartForChange.push(newArray.newData);
+  } else if (newArray.changeMethod === "ChangeQuantity") {
     cartForChange.forEach((item) => {
       if (item.id === newArray.newData.id) {
-        item.quantity = newArray.newData.quantity
+        item.quantity = newArray.newData.quantity;
       }
-    })
+    });
   }
-  console.log('change res', cartForChange)
+
   const cartId = state.cartStore.cart.id;
-  console.log('id cart ', cartId)
+
   const response = await fetch(`${BASE_URL}/carts/${cartId}`, {
-    method: 'PUT',
+    method: "PUT",
     headers: {
-      Authorization: `Bearer ${localStorage.getItem('token')}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${localStorage.getItem("token")}`,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
       merge: true,
       products: cartForChange,
-    })
+    }),
   });
-  const res = await response.json()
-  console.log('res ', res)
+
+  const res = await response.json();
+
   if (response.status === 400) {
-    return thunkApi.rejectWithValue((await response.json()) as MyKnownError);
+    return thunkApi.rejectWithValue(res as MyKnownError);
   }
   return res;
 });
@@ -112,11 +114,13 @@ const cartSlice = createSlice({
         state.cart.products = action.payload.products;
         state.cart.discountedTotal = action.payload.discountedTotal;
         state.cart.total = action.payload.total;
-        state.cart.totalProducts = action.payload.totalProducts;
-        state.cart.totalQuantity = action.payload.totalQuantity;        
+        state.cart.totalProducts = action.payload.products.filter(
+          (item) => item.quantity > 0
+        ).length;
+        state.cart.totalQuantity = action.payload.totalQuantity;
       })
       .addCase(fetchChangeCart.rejected, (state, action) => {
-        console.log(action.error)
+        console.log(action.error);
         state.status = "Error";
       });
   },
