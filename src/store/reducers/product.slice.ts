@@ -7,7 +7,7 @@ type TProductSlice = {
     products: TProductFull[];
 }
 
-const initialState: TProductSlice = {
+export const initialState: TProductSlice = {
   products: [],
 };
 

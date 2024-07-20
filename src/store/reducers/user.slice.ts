@@ -4,7 +4,7 @@ import { loginApi } from "../api/login.api";
 
 type TUserSlice = {
   userData: TUserData;
-  isLoggedIn: boolean;
+  isLoggedIn: boolean | undefined;
 };
 
 const initialState: TUserSlice = {
@@ -19,7 +19,7 @@ const initialState: TUserSlice = {
     token: "",
     refreshToken: "",
   },
-  isLoggedIn: false,
+  isLoggedIn: undefined,
 };
 
 export const userSlice = createSlice({

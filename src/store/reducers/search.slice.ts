@@ -9,7 +9,7 @@ type TSearchSlice = {
   searchQuery: string;
 };
 
-const initialState: TSearchSlice = {
+export const initialState: TSearchSlice = {
   total: 0,
   skip: 0,
   limit: apiCardsLimit,

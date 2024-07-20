@@ -41,7 +41,7 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
   };
 
   return (
-    <div className={styles.group__quantity}>
+    <div className={styles.group__quantity} data-testid="added-control">
       <AddedButton
         location="MinusButton"
         handler={handleMinusQuantity}

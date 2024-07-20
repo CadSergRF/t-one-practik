@@ -39,6 +39,7 @@ const AddedButton = ({
 
   return (
     <button
+      type="button"
       className={clsx(styles.button, {
         [styles.btn__hover]: hover,
       })}

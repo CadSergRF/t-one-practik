@@ -32,6 +32,7 @@ const SearchInput = () => {
 
   return (
     <input
+      data-testid="adsfewr3rfdsdsf4rt"
       type="search"
       value={searchValue}
       className={styles.search__input}

@@ -1,0 +1,23 @@
+import { beforeEach, describe, expect, test } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { AddedControl } from "../../../components/molecules/AddedControl/AddedControl";
+// import userEvent from "@testing-library/user-event";
+
+describe("Тестирование AddedButton", () => {
+
+  let elemAddedControl: HTMLElement
+
+    beforeEach(() => {
+      render(<AddedControl id={12} quantity={5} stock={7} />);
+      elemAddedControl = screen.getByTestId("added-control") 
+    });
+
+    afterEach(() => {
+      vi.clearAllMocks();
+    });
+
+    test('Находим', () => {
+      console.log(elemAddedControl)
+    })
+
+});
