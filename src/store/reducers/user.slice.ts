@@ -2,9 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import { TUserData } from "../../Types/login.type";
 import { loginApi } from "../api/login.api";
 
+type TUserDataStore = Omit<TUserData, 'token' | 'refreshToken'>
+
 type TUserSlice = {
-  userData: TUserData;
-  isLoggedIn: boolean | undefined;
+  userData: TUserDataStore;
+  isLoggedIn: boolean | null;
 };
 
 const initialState: TUserSlice = {
@@ -16,10 +18,8 @@ const initialState: TUserSlice = {
     lastName: "",
     gender: "",
     image: "",
-    token: "",
-    refreshToken: "",
   },
-  isLoggedIn: undefined,
+  isLoggedIn: null,
 };
 
 export const userSlice = createSlice({
