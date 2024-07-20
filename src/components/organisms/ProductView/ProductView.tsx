@@ -43,6 +43,7 @@ const ProductView = (data: TProductFull) => {
     evt.stopPropagation();
     dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
   };
+
   return (
     <>
       <Helmet>
@@ -55,6 +56,7 @@ const ProductView = (data: TProductFull) => {
         <div className={styles.info}>
           <div>
             <h1 className={styles.title}>{title}</h1>
+            {/* -------------- Rating Categiries --------------*/}
             <div className={styles.info__meta}>
               <Rating rating={rating} />
               <h3 className={styles.category}>{tags.join(", ")}</h3>
@@ -79,7 +81,7 @@ const ProductView = (data: TProductFull) => {
                 </span>
               </p>
             </div>
-            {!inCart || !!(quantityInCart === 0) && (
+            {(!inCart || !!(quantityInCart === 0)) && (
               <ButtonLF text="Add to cart" actionTo={handleAddToCart} />
             )}
             {inCart && quantityInCart > 0 && <AddedControl id={id} quantity={quantityInCart} stock={stock} />}
