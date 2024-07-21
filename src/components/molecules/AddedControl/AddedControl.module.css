@@ -6,6 +6,8 @@
   align-items: center;
   justify-items: center;
   gap: 5px;
+
+  position: relative;
 }
 
 .quantity {
@@ -16,6 +18,19 @@
 
   font: 400 16px/22px "Jost";
   color: var(--text-product-name);
+}
+
+.error {
+  min-width: -webkit-max-content;
+  min-width: -moz-max-content;
+  min-width: max-content;
+
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+
+  font: 400 12px/18px "Jost";
+  color: var(--text-error);
 }
 
 @media screen and (max-width: 630px) {

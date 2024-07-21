@@ -1,7 +1,8 @@
 import { beforeEach, describe, expect, test } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { screen } from "@testing-library/react";
 import { AddedButton } from "../../../../components/atoms/AddedButton/AddedButton";
 import userEvent from "@testing-library/user-event";
+import { renderWithProviders } from "../../../utils/test-utils";
 
 describe("Тестирование AddedButton", () => {
     const disBtn = false;
@@ -9,7 +10,7 @@ describe("Тестирование AddedButton", () => {
     let button: HTMLButtonElement;
 
     beforeEach(() => {
-      render(
+      renderWithProviders(
         <AddedButton
           location="AddButton"
           handler={onClickBtn}

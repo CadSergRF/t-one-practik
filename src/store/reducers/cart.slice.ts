@@ -92,7 +92,9 @@ const cartSlice = createSlice({
   name: "userCart",
   initialState,
   reducers: {
-    // на будущее
+    clearStatusError(state) {
+      state.status = "";
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -104,7 +106,7 @@ const cartSlice = createSlice({
         state.cart = action.payload.carts[0];
       })
       .addCase(fetchCartByUserId.rejected, (state) => {
-        state.status = "Error";
+        state.status = "CartError";
       })
       .addCase(fetchChangeCart.pending, (state) => {
         state.status = "Loading";
@@ -121,9 +123,10 @@ const cartSlice = createSlice({
       })
       .addCase(fetchChangeCart.rejected, (state, action) => {
         console.log(action.error);
-        state.status = "Error";
+        state.status = "ChangeQuantityError";
       });
   },
 });
 
+export const { clearStatusError } = cartSlice.actions;
 export default cartSlice.reducer;

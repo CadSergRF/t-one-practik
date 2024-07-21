@@ -1,6 +1,10 @@
 import { MouseEvent, useRef } from "react";
 import clsx from "clsx";
 
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+
+import { clearStatusError } from "../../../store/reducers/cart.slice";
+
 import { CartSVGIcon } from "../Icons/CartSVGIcon";
 import { MinusSVGIcon } from "../Icons/MinusSVGIcon";
 import { PlusSVGIcon } from "../Icons/PlusSVGIcon";
@@ -21,7 +25,16 @@ const AddedButton = ({
   disabled = false,
   hover = false,
 }: Props) => {
+  const dispatch = useAppDispatch();
+  const storeStatus = useAppSelector((state) => state.cartStore.status);
+
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  if (storeStatus === "ChangeQuantityError") {
+    setTimeout(() => {
+      dispatch(clearStatusError());
+    }, 2000);
+  }
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     buttonRef?.current?.blur(); // Убираем фокус с button после клика
@@ -59,6 +72,9 @@ const AddedButton = ({
         {location === "MinusButton" && <MinusSVGIcon />}
         {location === "PlusButton" && <PlusSVGIcon />}
       </div>
+      {(storeStatus === "ChangeQuantityError" && (location === "AddButton")) && (
+          <p className={styles.error}>Ошибка добавления в корзину</p>
+        )}
     </button>
   );
 };

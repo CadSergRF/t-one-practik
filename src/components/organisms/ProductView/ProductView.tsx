@@ -31,7 +31,7 @@ const ProductView = (data: TProductFull) => {
     discountPercentage,
   } = data;
 
-  const dispatch = useAppDispatch()
+  const dispatch = useAppDispatch();
   const { inCart, quantityInCart } = useInCart(id);
   const ariaText = "Product page - " + title;
   const priceWithDiscount = roundedNum(
@@ -41,7 +41,12 @@ const ProductView = (data: TProductFull) => {
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
+    dispatch(
+      fetchChangeCart({
+        changeMethod: "AddToCart",
+        newData: { id: id, quantity: 1 },
+      })
+    );
   };
 
   return (
@@ -84,7 +89,9 @@ const ProductView = (data: TProductFull) => {
             {(!inCart || !!(quantityInCart === 0)) && (
               <ButtonLF text="Add to cart" actionTo={handleAddToCart} />
             )}
-            {inCart && quantityInCart > 0 && <AddedControl id={id} quantity={quantityInCart} stock={stock} />}
+            {inCart && quantityInCart > 0 && (
+              <AddedControl id={id} quantity={quantityInCart} stock={stock} />
+            )}
           </section>
         </div>
       </section>

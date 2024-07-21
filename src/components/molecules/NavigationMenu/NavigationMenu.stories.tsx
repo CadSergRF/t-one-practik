@@ -17,14 +17,14 @@ type Story = StoryObj<typeof NavigationMenu>;
 
 export const Primary: Story = {
   args: {
-    loggedIn: false,
+    sbLoggedIn: false,
   },
   argTypes: {
     location: {
       options: ["Header", "Footer"],
       control: { type: "radio" },
     },
-    counter: {
+    sbCounter: {
       control: {
         type: "range",
         min: 0,
@@ -41,7 +41,7 @@ export const Primary: Story = {
         { name: "footer", value: "#444b58" },
       ],
     },
-    layout: 'centered',
+    layout: "centered",
   },
   decorators: [
     (Story) => (

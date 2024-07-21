@@ -1,6 +1,10 @@
 import { MouseEvent, useRef } from "react";
 import { HashLink } from "react-router-hash-link";
 
+import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
+
+import { clearStatusError } from "../../../store/reducers/cart.slice";
+
 import styles from "./ButtonLF.module.css";
 
 type Props = {
@@ -9,7 +13,16 @@ type Props = {
 };
 
 const ButtonLF = ({ text, actionTo }: Props) => {
+  const dispatch = useAppDispatch();
+  const storeStatus = useAppSelector((state) => state.cartStore.status);
+
   const buttonRef = useRef<HTMLButtonElement>(null);
+
+  if (storeStatus === "ChangeQuantityError") {
+    setTimeout(() => {
+      dispatch(clearStatusError());
+    }, 2000);
+  }
 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     buttonRef?.current?.blur(); // Убираем фокус с button после клика
@@ -24,8 +37,16 @@ const ButtonLF = ({ text, actionTo }: Props) => {
     );
   } else {
     return (
-      <button className={styles.button} onClick={handleClick} ref={buttonRef}>
+      <button
+        className={styles.button}
+        onClick={handleClick}
+        ref={buttonRef}
+        disabled={storeStatus === "ChangeQuantityError"}
+      >
         {text}
+        {storeStatus === "ChangeQuantityError" && (
+          <p className={styles.error}>Ошибка добавления в корзину</p>
+        )}
       </button>
     );
   }

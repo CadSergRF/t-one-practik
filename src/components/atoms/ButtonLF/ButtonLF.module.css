@@ -1,4 +1,6 @@
 .button {
+  position: relative;
+
   padding: 20px 50px;
 
   outline: none;
@@ -24,6 +26,17 @@
 
 .button:disabled {
   background-color: var(--button-disabled);
+}
+
+.error {
+  min-width: max-content;
+
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+
+  font: 400 12px/18px "Jost";
+  color: var(--text-error);
 }
 
 @media screen and (max-width: 660px) {

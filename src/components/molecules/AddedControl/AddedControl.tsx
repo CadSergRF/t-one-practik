@@ -2,7 +2,7 @@ import { MouseEvent } from "react";
 
 import { useAppDispatch, useAppSelector } from "../../../hooks/redux.hooks";
 
-import { fetchChangeCart } from "../../../store/reducers/cart.slice";
+import { clearStatusError, fetchChangeCart } from "../../../store/reducers/cart.slice";
 
 import { AddedButton } from "../../atoms/AddedButton/AddedButton";
 
@@ -16,9 +16,15 @@ type Props = {
 
 const AddedControl = ({ id, quantity, stock }: Props) => {
   const dispatch = useAppDispatch();
-  const isFetchLoading = useAppSelector((state) => state.cartStore.status);
+  const storeStatus = useAppSelector((state) => state.cartStore.status);
 
   const priceWord = quantity > 1 ? "items" : "item";
+
+  if (storeStatus === "ChangeQuantityError") {
+    setTimeout(() => {
+      dispatch(clearStatusError())
+    }, 2000)
+  }
 
   const handleMinusQuantity = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
@@ -45,7 +51,7 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
       <AddedButton
         location="MinusButton"
         handler={handleMinusQuantity}
-        disabled={isFetchLoading === "Loading"}
+        disabled={storeStatus === ("Loading" || "ChangeQuantityError")}
       />
       <p className={styles.quantity}>
         {quantity}&#160;{priceWord}
@@ -53,8 +59,9 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
       <AddedButton
         location="PlusButton"
         handler={handlePlusQuantity}
-        disabled={stock === quantity || isFetchLoading === "Loading"}
+        disabled={stock === quantity || storeStatus === ("Loading" || "ChangeQuantityError")}
       />
+      {(storeStatus === "ChangeQuantityError") && <p className={styles.error}>Ошибка изменения количества</p>}
     </div>
   );
 };

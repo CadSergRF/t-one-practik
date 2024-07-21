@@ -29,6 +29,9 @@ const CatalogItem = ({
   sbCart = false,
   sbQuantity = 5,
 }: Props) => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+
   const { id, title, price, thumbnail, discountPercentage, stock } = item;
 
   const { inCart, quantityInCart } = useInCart(id);
@@ -38,16 +41,18 @@ const CatalogItem = ({
     2
   );
 
-  const navigate = useNavigate();
-const dispatch = useAppDispatch();
-
   const handleShowProduct = () => {
     navigate(`/product/${id}`);
   };
 
   const handleAddToCart = (evt: MouseEvent<HTMLButtonElement>) => {
     evt.stopPropagation();
-    dispatch(fetchChangeCart({changeMethod: "AddToCart", newData: {id: id, quantity: 1}}))
+    dispatch(
+      fetchChangeCart({
+        changeMethod: "AddToCart",
+        newData: { id: id, quantity: 1 },
+      })
+    );
   };
 
   return (
@@ -78,8 +83,12 @@ const dispatch = useAppDispatch();
           {((!inCart && !sbCart) || (inCart && !!(quantityInCart === 0))) && (
             <AddedButton location="AddButton" handler={handleAddToCart} />
           )}
-          {inCart && quantityInCart > 0 && <AddedControl id={id} quantity={quantityInCart} stock={stock} />}
-          {sbCart && <AddedControl id={id} quantity={sbQuantity} stock={stock} />}
+          {inCart && quantityInCart > 0 && (
+            <AddedControl id={id} quantity={quantityInCart} stock={stock} />
+          )}
+          {sbCart && (
+            <AddedControl id={id} quantity={sbQuantity} stock={stock} />
+          )}
         </div>
       </article>
     </li>

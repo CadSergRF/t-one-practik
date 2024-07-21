@@ -6,7 +6,7 @@ const MainLogo = () => {
   return (
     <HashLink
       smooth
-      to="/"
+      to="/#top"
       className={styles.logo}
       aria-label="Go to the main page"
     >
