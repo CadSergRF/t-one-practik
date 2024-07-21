@@ -99,7 +99,7 @@ const cartSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchCartByUserId.pending, (state) => {
-        state.status = "Loading";
+        state.status = "LoadingCart";
       })
       .addCase(fetchCartByUserId.fulfilled, (state, action) => {
         state.status = "Done";

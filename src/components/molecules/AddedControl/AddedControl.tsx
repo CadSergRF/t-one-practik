@@ -61,7 +61,7 @@ const AddedControl = ({ id, quantity, stock }: Props) => {
         handler={handlePlusQuantity}
         disabled={stock === quantity || storeStatus === ("Loading" || "ChangeQuantityError")}
       />
-      {(storeStatus === "ChangeQuantityError") && <p className={styles.error}>Ошибка изменения количества</p>}
+      {(storeStatus === "ChangeQuantityError") && <p className={styles.error}>Quantity change error</p>}
     </div>
   );
 };

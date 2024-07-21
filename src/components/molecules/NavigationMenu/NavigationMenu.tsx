@@ -29,7 +29,7 @@ const NavigationMenu = ({
     }
   }, [dispatch, userData.id]);
 
-  const counter = useAppSelector((state) => state.cartStore.cart.totalProducts);
+  const counter = useAppSelector((state) => state.cartStore.cart.totalQuantity);
 
   // для storybook
   const counterFromSB = sbCounter ? sbCounter : counter;

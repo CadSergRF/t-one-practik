@@ -30,6 +30,8 @@ const Catalog = () => {
     skip: skip,
   });
 
+  console.log(isLoading)
+
   useEffect(() => {
     // 1. если есть data, то есть что добавлять в стейт
     // 2. условие для добавления НОВЫХ карточек
@@ -54,7 +56,7 @@ const Catalog = () => {
         <h1 className={styles.title}>Catalog</h1>
         <SearchInput />
         {error && (
-          <div className={styles.error}>Произошла ошибка загрузки данных</div>
+          <div className={styles.error}>Data upload error</div>
         )}
         {isLoading && <Preloader />}
         {products && <CardsList cards={products} />}

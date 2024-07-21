@@ -45,7 +45,7 @@ const ButtonLF = ({ text, actionTo }: Props) => {
       >
         {text}
         {storeStatus === "ChangeQuantityError" && (
-          <p className={styles.error}>Ошибка добавления в корзину</p>
+          <p className={styles.error}>Error adding to cart</p>
         )}
       </button>
     );

@@ -73,7 +73,7 @@ const AddedButton = ({
         {location === "PlusButton" && <PlusSVGIcon />}
       </div>
       {(storeStatus === "ChangeQuantityError" && (location === "AddButton")) && (
-          <p className={styles.error}>Ошибка добавления в корзину</p>
+          <p className={styles.error}>Error adding to cart</p>
         )}
     </button>
   );

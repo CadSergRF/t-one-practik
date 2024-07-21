@@ -38,6 +38,21 @@
   gap: 10px;
 }
 
+.error__load {
+  width: max-content;
+
+  margin: 0 auto;
+  margin-top: 100px;
+
+}
+
+.link {
+  font: 600 24px/36px "Jost";
+  color: var(--text-secondary);
+
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1250px) {
   .wrapper {
     width: auto;

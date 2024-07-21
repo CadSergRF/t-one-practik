@@ -10,7 +10,8 @@
 .cart__counter::before {
   content: attr(data-count);
 
-  width: 12px;
+  width: min-content;
+  min-width: 12px;
   height: 12px;
 
   border-radius: 50%;
