@@ -24,19 +24,19 @@ const Catalog = () => {
 
   const dispatch = useAppDispatch();
 
-  const { data, error, isLoading } = productsApi.useGetSearchProductsQuery({
+  const { data, error, isFetching } = productsApi.useGetSearchProductsQuery({
     q: searchQuery,
     limit: limit,
     skip: skip,
   });
 
-  console.log(isLoading)
+  console.log(isFetching);
 
   useEffect(() => {
     // 1. если есть data, то есть что добавлять в стейт
     // 2. условие для добавления НОВЫХ карточек
     // без 2 при навигации по приложению всегда будет добавляться data из последнего запроса
-    if (data && (products.length - skip === 0)) {
+    if (data && products.length - skip === 0) {
       dispatch(addCards(data));
       dispatch(refreshSearchTotalState(data.total));
     }
@@ -55,11 +55,14 @@ const Catalog = () => {
       <div className={styles.container}>
         <h1 className={styles.title}>Catalog</h1>
         <SearchInput />
-        {error && (
-          <div className={styles.error}>Data upload error</div>
+        {error && <div className={styles.error}>Data upload error</div>}
+        {/* {isLoading && <Preloader />} */}
+        {(products && !error) && (
+          <>
+            <CardsList cards={products} />
+            {isFetching && <Preloader />}
+          </>
         )}
-        {isLoading && <Preloader />}
-        {products && <CardsList cards={products} />}
         {products.length < total && (
           <ButtonLF text="Show more" actionTo={handleShowMore} />
         )}
