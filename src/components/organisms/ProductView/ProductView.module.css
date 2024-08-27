@@ -1,0 +1,210 @@
+.wrapper {
+  width: 1180px;
+
+  margin: 48px auto;
+  margin-bottom: 155px;
+
+  display: grid;
+  grid-template-columns: 520px auto;
+  gap: 40px;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  margin-bottom: 18px;
+
+  font: 600 36px/56px "Jost";
+  color: var(--text-product-name);
+  text-align: left;
+}
+
+.info__meta {
+  display: flex;
+  justify-content: space-between;
+}
+
+.category {
+  font: 400 16px/24px "Jost";
+  color: var(--text-category);
+}
+
+.stock {
+  padding: 10px 0;
+
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+
+  font: 500 18px/24px "Jost";
+  color: var(--text-rek);
+  text-align: left;
+}
+
+.description {
+  font: 400 18px/30px "Jost";
+  color: var(--text-secondary);
+  text-align: left;
+
+  display: -webkit-box;
+  line-clamp: 3;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.other {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.other__text {
+  font: 400 16px/24px "Jost";
+  color: var(--text-category);
+  text-align: left;
+}
+
+.buy {
+  padding: 12px;
+
+  border-radius: 6px;
+
+  background-color: var(--background-color-buy);
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.prices__wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.prices {
+  padding: 0 26px 0 20px;
+
+  border-right: 1px solid var(--border);
+}
+
+.price {
+  font: 600 36px/40px "Jost";
+  color: var(--text-product-price);
+}
+
+.price__old {
+  margin-top: 4px;
+
+  font: 500 16px/20px "Jost";
+  color: var(--text-category);
+  text-align: left;
+  text-decoration: line-through;
+}
+
+.prices__text {
+  padding: 0 20px 0 24px;
+
+  font: 400 16px/24px "Jost";
+  color: var(--text-product-price);
+}
+
+.prices__text_discount {
+  padding-left: 8px;
+
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1250px) {
+  .wrapper {
+    width: 800px;
+    margin-bottom: 50px;
+    padding: 0 30px;
+    grid-template-columns: 370px auto;
+    gap: 20px;
+  }
+
+  .title {
+    line-height: 36px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .buy {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .wrapper {
+    width: 650px;
+    padding: 0 30px;
+    grid-template-columns: 300px auto;
+    gap: 20px;
+  }
+
+  .title {
+    font-size: 24px;
+  }
+
+  .info {
+    gap: 15px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .other {
+    gap: 5px;
+  }
+
+  .buy {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .prices__wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  .wrapper {
+    width: 450px;
+    padding: 0 30px;
+    grid-template-columns: 450px;
+    gap: 20px;
+  }
+}
+
+@media screen and (max-width: 530px) {
+  .wrapper {
+    width: 250px;
+    margin-bottom: 30px;
+    padding: 0 10px;
+    grid-template-columns: 250px;
+    gap: 20px;
+  }
+
+  .category {
+    font-size: 14px;
+  }
+
+  .price {
+    padding: 0 5px;
+  }
+
+  .prices__text {
+    padding: 0 5px;
+  }
+}

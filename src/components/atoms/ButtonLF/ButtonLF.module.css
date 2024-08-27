@@ -1,0 +1,56 @@
+.button {
+  position: relative;
+
+  padding: 20px 50px;
+
+  outline: none;
+  border: none;
+  border-radius: 4px;
+
+  background-color: var(--button-primary);
+
+  font: 400 16px/22px "Jost";
+  color: var(--text-primary);
+  text-decoration: none;
+
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: var(--button-hover);
+}
+
+.button:focus {
+  outline: 2px solid var(--button-hover);
+}
+
+.button:disabled {
+  background-color: var(--button-disabled);
+}
+
+.error {
+  min-width: max-content;
+
+  position: absolute;
+  bottom: -18px;
+  right: 0;
+
+  font: 400 12px/18px "Jost";
+  color: var(--text-error);
+}
+
+@media screen and (max-width: 660px) {
+  .button {
+    padding: 10px 20px;
+
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .button {
+    padding: 10px 20px;
+
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,34 @@
+:root {
+  --text-primary: #fff;
+  --text-back: #ffffff1f;
+  --text-secondary: #444b58;
+  --text-placeholder: #b2b5bb;
+  --text-cart-total: #b2b5bb;
+  --text-product-name: #444b58;
+  --text-product-price: #444b58;
+  --text-category: #646464;
+  --text-rek: #f14f4f;
+  --text-error: #f14f4f;
+  --text-image-hover: #ffffff99;
+
+  --border: #c4c4c4;
+
+  --button-primary: #f14f4f;
+  --button-hover: #8c2828;
+  --button-disabled: #f8afaf;
+
+  --link-bg: #fff;
+  --link-bg-hover: #c4c4c4;
+  --link-wo-bg: #c4c4c4;
+  --link-wo-bg-hover: #444b58;
+
+  --image-hover: #87878740;
+
+  --cart-item-hover: #f6f6f6;
+
+  --background-color-primary: #fff;
+  --background-color-secondary: #484283;
+  --background-color-footer: #444b58;
+  --background-color-input: #f6f6f6;
+  --background-color-buy: #0000000a;
+}

@@ -1,0 +1,54 @@
+.search__input {
+  width: 100%;
+  padding: 20px;
+
+  border: none;
+  border-radius: 4px;
+
+  background-color: var(--background-color-input);
+
+  font: 400 16px/22px "Jost";
+  color: var(--text-secondary);
+}
+
+.search__input::-webkit-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::-moz-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input:-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::-ms-input-placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::placeholder {
+  font: 400 16px/22px "Jost";
+  color: var(--text-placeholder);
+}
+
+.search__input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  background-color: var(--background-color-secondary);
+  -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23777'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+  background-size: 20px 20px;
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.search__input:active,
+.search__input:hover,
+.search__input:focus {
+  outline: 0;
+  outline-offset: 0;
+}

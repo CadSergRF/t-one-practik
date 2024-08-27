@@ -1,0 +1,57 @@
+.total {
+  width: 356px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.total__item {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+
+  text-align: left;
+}
+
+.total__item_style {
+  padding-bottom: 20px;
+
+  border-bottom: 1px solid var(--border);
+}
+
+.total__count {
+  font: 400 20px/30px "Jost";
+  color: var(--text-cart-total);
+}
+
+.total__count_value {
+  color: var(--text-secondary);
+}
+
+.total__brutto {
+  font: 600 20px/30px "Jost";
+  color: var(--text-cart-total);
+}
+
+.total__brutto_value {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.total__netto {
+  font: 600 24px/32px "Jost";
+  color: var(--text-cart-total);
+}
+
+.total__netto_value {
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+@media screen and (max-width: 1250px) {
+  .total {
+    width: auto;
+    min-width: 200px;
+  }
+}

@@ -1,0 +1,19 @@
+.wrapper {
+  min-height: 100vh;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text {
+  font: 600 24px/36px "Jost";
+  color: var(--text-secondary);
+}
+
+.link {
+  font: 600 24px/36px "Jost";
+  color: var(--text-secondary);
+
+  cursor: pointer;
+}

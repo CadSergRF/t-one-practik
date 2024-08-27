@@ -1,35 +1,60 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Route, Routes } from "react-router-dom";
+
+import { useAppSelector } from "./hooks/redux.hooks";
+import { loginApi } from "./store/api/login.api";
+
+import { Preloader } from "./components/atoms/PreLoader/PreLoader";
+import { RequireAuth } from "./components/templates/RequireAuth/RequireAuth";
+import { MainLayout } from "./components/templates/MainLayout/MainLayout";
+import { MainPage } from "./components/pages/MainPage/MainPage";
+import { ProductPage } from "./components/pages/ProductPage/ProductPage";
+import { Cart } from "./components/pages/Cart/Cart";
+import { ErrorPage } from "./components/pages/ErrorPage/ErrorPage";
+import { LoginPage } from "./components/pages/LoginPage/LoginPage";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const isLoggedIn = useAppSelector((state) => state.userStore.isLoggedIn);
+  const tokenLS = localStorage.getItem("token");
+
+  loginApi.useCurrentUserQuery(tokenLS || "");
 
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      {isLoggedIn === null && <Preloader />}
+      {isLoggedIn !== null && (
+        <Routes>
+          <Route path="/" element={<MainLayout />}>
+            <Route
+              index
+              element={
+                <RequireAuth>
+                  <MainPage />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="product/:id"
+              element={
+                <RequireAuth>
+                  <ProductPage />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path="cart"
+              element={
+                <RequireAuth>
+                  <Cart />
+                </RequireAuth>
+              }
+            />
+            <Route path="login" element={<LoginPage />} />
+          </Route>
+          <Route path="/*" element={<ErrorPage />} />
+        </Routes>
+      )}
     </>
-  )
+  );
 }
 
-export default App
+export default App;

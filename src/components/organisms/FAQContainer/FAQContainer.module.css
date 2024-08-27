@@ -1,0 +1,46 @@
+.wrapper {
+  padding: 60px 30px;
+
+  background-color: var(--background-color-secondary);
+}
+
+.container {
+  width: 880px;
+
+  margin: 0 auto;
+}
+
+.title {
+  padding-bottom: 20px;
+
+  font: 700 36px/56px "Jost";
+  color: var(--text-primary);
+  text-align: left;
+}
+
+.list {
+  list-style-type: none;
+
+  text-align: left;
+}
+
+.list:first-of-type {
+  border-top: 1px solid var(--text-primary);
+}
+
+@media screen and (max-width: 960px) {
+  .container {
+    width: auto;
+  }
+}
+
+@media screen and (max-width: 460px) {
+  .wrapper {
+    padding: 30px 20px;
+  }
+
+  .title {
+    font-size: 24px;
+    line-height: 26px;
+  }
+}
