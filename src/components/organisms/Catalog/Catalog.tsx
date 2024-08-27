@@ -30,8 +30,6 @@ const Catalog = () => {
     skip: skip,
   });
 
-  console.log(isFetching);
-
   useEffect(() => {
     // 1. если есть data, то есть что добавлять в стейт
     // 2. условие для добавления НОВЫХ карточек
